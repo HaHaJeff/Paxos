@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+service Paxos {
+  rpc OnPrepare(PrepareRequest) returns (PrepareReply);
+  rpc OnAccept(AcceptRequest) returns (AcceptReply);
+  rpc OnSuccess(SuccessRequest) returns (SuccessReply);
+}
+
+message PrepareRequest {
+  uint64 InstanceID = 1;
+  uint64 NodeID = 2;
+  uint64 ProposalID = 3;
+}
+
+message PrepareReply {
+  uint64        InstanceID = 1;
+  uint64        NodeID = 2;
+  uint64        ProposalID = 3;
+  bytes         Value = 4;
+  bool          NoMoreAccepted = 5;
+}
+
+message AcceptRequest {
+  uint64 InstanceID = 1;
+  uint64 NodeID = 2;
+  uint64 ProposalID = 3;
+  bytes  Value = 4;
+  uint64 FirstUnchosenIndex = 5;
+
+}
+
+message AcceptReply {
+  uint64 InstanceID = 1;
+  uint64 NodeID = 3;
+  uint64 ProposalID = 4;
+  uint64 FirstUnchosenIndex = 5;
+
+}
+
+message SuccessRequest {
+  uint64 InstanceID = 1;
+  uint64 NodeID = 2;
+  bytes Value = 3;
+}
+
+message SuccessReply {
+  uint64 FirstUnchosenIndex = 1;
+  uint64 NodeID = 2;
+}

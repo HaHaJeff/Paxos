@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service Paxos {
+  rpc OnPrepare (PaxosMsg) returns (PaxosMsg) {}
+}
+
+message PaxosMsg{
+  required int32 MsgType = 1;
+  optional uint64 InstanceID = 2;
+  optional uint64 NodeID = 3;
+  optional uint64 ProposalID = 4;
+  optional uint64 ProposalNodeID = 5;
+  optional bytes Value = 6;
+}
+
+
