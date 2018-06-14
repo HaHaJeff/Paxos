@@ -6,8 +6,6 @@
 #ifndef ACCEPTOR_H
 #define ACCEPTOR_H
 
-typedef std::pair<uint32_t, std::string> ProposalEntry ;
-typedef std::pair<uint32_t, ProposalEntry> LogEntry;
 
 class AcceptState {
   public:
@@ -39,6 +37,7 @@ class AcceptState {
     uint32_t minProposal_;
     uint32_t firstUnchosenIndex_;
     std::map<uint32_t, ProposalEntry> acceptedProposal_;
+
 
     //std::map<uint32_t, uint32_t> acceptedProposal_;
     //std::map<uint32_t, std::string> acceptedValue;

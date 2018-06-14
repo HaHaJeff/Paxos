@@ -1,7 +1,9 @@
+
 #include "comdef.h"
 
 #ifndef PROPOSER_H
 #define PROPOSER_H
+
 
 //TODO: need mutex?
 //TODO: persist

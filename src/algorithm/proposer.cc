@@ -2,6 +2,8 @@
 
 Proposer::Proposer() {  }
 
+Proposer::~Proposer() {  }
+
 void Proposer::SendPrepare(const PrepareRequest &request, PrepareReply &reply) {
 
 }

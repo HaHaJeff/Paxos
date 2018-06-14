@@ -14,29 +14,22 @@ PROTO_PATH = ../../proto
 
 PROTO_OUT = .
 
-all: $(OBJS) 
+all: $(OBJS) move 
 
 $(OBJ): %.o: %.cc
 	@echo $< "====>" $@
 	$(CXX) $< $(LDFLAGS) -o $@
 
+move:
+	@mv *.o ../objs
 
-#proposer.o: proposer.cc rpc.pb.cc rpc.grpc.pb.cc
-#	@echo $^ "====>" $@
-#	$(CXX) $^ $(LDFLAGS) -o $@
+#.PRECIOUS: %.grpc.pb.cc
+#	%.grpc.pb.cc: %.proto
+#	$(PROTOC) -I $(PROTO_PATH) --grpc_out=$(PROTO_OUT) --plugin=protoc-gen-grpc=$(GRPC_CPP_PLUGIN_PATH) $<
 
-#acceptor.o: acceptor.cc rpc.pb.cc rpc.grpc.pb.cc
-#	@echo $^ "====>" $@
-#	$(CXX) $^ $(LDFLAGS) -o $@
-
-.PRECIOUS: %.grpc.pb.cc
-%.grpc.pb.cc: %.proto
-	$(PROTOC) -I $(PROTO_PATH) --grpc_out=$(PROTO_OUT) --plugin=protoc-gen-grpc=$(GRPC_CPP_PLUGIN_PATH) $<
-
-.PRECIOUS: %.pb.cc
-%.pb.cc: %.proto
-	$(PROTOC) -I $(PROTO_PATH) --cpp_out=$(PROTO_OUT) $<
+#.PRECIOUS: %.pb.cc
+#	%.pb.cc: %.proto
+#	$(PROTOC) -I $(PROTO_PATH) --cpp_out=$(PROTO_OUT) $<
 
 clean:
 	@rm -rf *.pb.cc *.pb.h *.o
-

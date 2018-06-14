@@ -2,6 +2,7 @@
 #include <iterator>
 
 AcceptState::AcceptState() : lastLogIndex_(0), minProposal_(0), firstUnchosenIndex_(0) {  }
+AcceptState::~AcceptState() {  }
 
 bool AcceptState::GetLogProposal(uint32_t index, ProposalEntry &proposal) {
   if(acceptedProposal_.find(index) == acceptedProposal_.end()) {
@@ -33,6 +34,8 @@ void AcceptState::UpdateEntry(uint32_t index, const ProposalEntry &proposal) {
 }
 
 Acceptor::Acceptor() {  }
+
+Acceptor::~Acceptor() {  }
 
 void Acceptor::OnPrepare(const PrepareRequest &request, PrepareReply &reply) {
 
