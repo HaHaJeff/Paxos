@@ -1,11 +1,18 @@
 #include <string>
 #include <map>
 
+#include "comdef.h"
+
 #ifndef ACCEPTOR_H
 #define ACCEPTOR_H
 
+typedef std::pair<uint32_t, std::string> ProposalEntry ;
+typedef std::pair<uint32_t, ProposalEntry> LogEntry;
+
 class AcceptState {
   public:
+    AcceptState();
+    ~AcceptState();
 
     void SetLastLogIndex(uint32_t index) {
       lastLogIndex_ = index;
@@ -20,17 +27,21 @@ class AcceptState {
       return minProposal_;
     }
 
+    bool GetLogProposal(uint32_t index, ProposalEntry &proposal);
+    bool GetLogValue(uint32_t index, std::string &value);
+    void SetLogProposal(uint32_t index, const ProposalEntry &proposal);
 
-    bool IsChosen(uint32_t index) const {
-      return acceptedProposal_[index] == -1;
-    }
+  private:
+    void UpdateEntry(uint32_t index, const ProposalEntry &proposal);
 
   private:
     uint32_t lastLogIndex_;
     uint32_t minProposal_;
     uint32_t firstUnchosenIndex_;
-    std::map<uint32_t, uint32_t> acceptedProposal_;
-    std::map<uint32_t, std::string> acceptedProposal_;
+    std::map<uint32_t, ProposalEntry> acceptedProposal_;
+
+    //std::map<uint32_t, uint32_t> acceptedProposal_;
+    //std::map<uint32_t, std::string> acceptedValue;
 
 };
 
@@ -40,8 +51,11 @@ class Acceptor {
     ~Acceptor();
 
     void OnPrepare(const PrepareRequest &request, PrepareReply &reply);
-    void OnAccpet(const AcceptRequest &request, AcceptReply &reply);
+    void OnAccept(const AcceptRequest &request, AcceptReply &reply);
     void OnSuccess(const SuccessRequest &request, SuccessReply &reply);
-}
+
+  private:
+    AcceptState state_;
+};
 
 #endif

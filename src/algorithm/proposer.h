@@ -1,8 +1,11 @@
+#include "comdef.h"
+
 #ifndef PROPOSER_H
 #define PROPOSER_H
 
 //TODO: need mutex?
 //TODO: persist
+
 class ProposerState {
   public:
     ProposerState() : maxRound_(0), nextIndex_(0), prepared_(false) {  }
@@ -36,8 +39,8 @@ class Proposer {
     void SendSuccess(const SuccessRequest &request, SuccessReply &reply);
 
   private:
-    void NewPrepareRequest(PreapreRequest &request);
-    void NewAcceptReuqest(AcceptRequest &request);
+    void NewPrepareRequest(PrepareRequest &request);
+    void NewAcceptRequest(AcceptRequest &request);
     void NewSuccessRequest(SuccessRequest &request);
 
   private:
