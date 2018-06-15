@@ -13,12 +13,18 @@ class ProposerState {
     ProposerState() : maxRound_(0), nextIndex_(0), prepared_(false) {  }
     ~ProposerState() {  }
 
-    void SetMaxRound(int round) { maxRound_ = round; }
+    void SetMaxRound(uint32_t round) { maxRound_ = round; }
     void IncMaxRound() { maxRound_ += 1; }
     uint32_t GetMaxRound() const { return maxRound_; }
 
-    void SetNextIndex(int index) { nextIndex_ = index; }
+    void SetNodeID(uint32_t nodeID) { nodeID_ = nodeID; }
+    uint32_t GetNodeID() const { return nodeID_; }
+
+    void SetNextIndex(uint32_t index) { nextIndex_ = index; }
     uint32_t GetNextIndex() const { return nextIndex_; }
+
+    void SetFirstUnchosenIndex(uint32_t index) { firstUnchosenIndex_ = index; }
+    uint32_t GetFirstUnchosenIndex() const { return firstUnchosenIndex_; }
 
     bool IsPrepared() { return prepared_; }
     void SetPrepared() { prepared_ = true; }
@@ -28,6 +34,7 @@ class ProposerState {
     uint32_t firstUnchosenIndex_;
     uint32_t maxRound_;
     uint32_t nextIndex_;
+    uint32_t nodeId_;
     bool prepared_;
 };
 
@@ -47,6 +54,7 @@ class Proposer {
 
   private:
     ProposerState state_;
+    std::vector<PaxosClient*> peers_;
 };
 
 #endif

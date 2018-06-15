@@ -7,9 +7,12 @@ class StateMachine {
   public:
     StateMachine();
     bool AddToStateMachine(const LogEntry &entry);
+    void Print();
 
   private:
     bool Move();
+
+    bool Insert(const LogEntry &entry);
 
     bool CanExecute() {
       return window_ == 0;
