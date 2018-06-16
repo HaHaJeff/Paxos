@@ -37,14 +37,14 @@ Acceptor::Acceptor() {  }
 
 Acceptor::~Acceptor() {  }
 
-void Acceptor::OnPrepare(const PrepareRequest &request, PrepareReply &reply) {
+void Acceptor::RecvPrepare(const PrepareRequest &request, PrepareReply &reply) {
 
 }
 
-void Acceptor::OnAccept(const AcceptRequest &request, AcceptReply &reply) {
+void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
 
 }
 
-void Acceptor::OnSuccess(const SuccessRequest &request, SuccessReply &reply) {
+void Acceptor::RecvSuccess(const SuccessRequest &request, SuccessReply &reply) {
 
 }

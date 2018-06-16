@@ -49,9 +49,9 @@ class Acceptor {
     Acceptor();
     ~Acceptor();
 
-    void OnPrepare(const PrepareRequest &request, PrepareReply &reply);
-    void OnAccept(const AcceptRequest &request, AcceptReply &reply);
-    void OnSuccess(const SuccessRequest &request, SuccessReply &reply);
+    void RecvPrepare(const PrepareRequest &request, PrepareReply &reply);
+    void RecvAccept(const AcceptRequest &request, AcceptReply &reply);
+    void RecvSuccess(const SuccessRequest &request, SuccessReply &reply);
 
   private:
     AcceptState state_;

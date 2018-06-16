@@ -1,5 +1,6 @@
 
 #include "comdef.h"
+#include "paxos_client.h">
 
 #ifndef PROPOSER_H
 #define PROPOSER_H
@@ -34,7 +35,7 @@ class ProposerState {
     uint32_t firstUnchosenIndex_;
     uint32_t maxRound_;
     uint32_t nextIndex_;
-    uint32_t nodeId_;
+    uint32_t nodeID_;
     bool prepared_;
 };
 

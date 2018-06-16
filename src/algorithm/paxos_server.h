@@ -1,31 +1,25 @@
 #include "comdef.h"
-#include "acceptor.h"
-
+#include "paxos_service.h"
 
 #ifndef PAXOS_SERVER_H
 #define PAXOS_SERVER_H
 
-class PaxosServer final : public Service{
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext;
+using grpc::Status;
+
+class PaxosServer {
   public:
-    Status OnPrepare(ServerContext *context, const PrepareRequest *request,
-        PrepareReply *reply) override {
-      pAcceptor_->RecvPrepare(*request, *reply);
-      return Status::OK;
-    }
-
-    Status OnAccept(ServerContext *context, const AcceptRequest *request,
-        AcceptReply *reply) override {
-      pAcceptor_->RecvAccept(*request, *reply);
-      return Status::OK;
-    }
-
-    Status OnSuccess(ServerContext *context, const SuccessRequest *request,
-        SuccessReply *reply) override {
-      pAcceptor_->RecvSuccess(*request, *reply);
-      return Status::OK;
-    }
+    PaxosServer(const std::string &address);
+    ~PaxosServer();
+    void Start();
+    void Stop();
   private:
-    std::shared_ptr<Acceptor> pAcceptor_;
+    PaxosService service_;
+    bool started_;
+    std::string address_;
+    std::unique_ptr<Server> server_;
 };
 
 #endif
