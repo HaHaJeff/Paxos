@@ -11,7 +11,7 @@ using grpc::Status;
 //use grpc stub;
 class PaxosClient {
   public:
-    PaxosClient(std::shared_ptr<Channel> &channel);
+    PaxosClient(std::shared_ptr<Channel> channel);
     void SendPrepare(const PrepareRequest &request, PrepareReply *reply);
     void SendAccept(const AcceptRequest &request, AcceptReply *reply);
     void SendSuccess(const SuccessRequest &request, SuccessReply *reply);

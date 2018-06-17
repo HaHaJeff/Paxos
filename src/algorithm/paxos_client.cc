@@ -1,6 +1,6 @@
 #include "paxos_client.h"
 
-PaxosClient::PaxosClient(std::shared_ptr<Channel> &channel)
+PaxosClient::PaxosClient(std::shared_ptr<Channel> channel)
   : stub_(Paxos::NewStub(channel)) {  }
   //stub_ = Paxos::NewStub(channel);
 //}

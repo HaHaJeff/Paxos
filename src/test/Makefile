@@ -14,11 +14,7 @@ vpath %.proto $(PROTO_PATH)
 
 PROTO_OUT = ./
 
-all: test_acceptor test_proposer test_state
-
-main: main.o rpc.pb.o rpc.grpc.pb.o
-	@echo $^ "====>" $@
-	$(CXX) $^ $(LDFLAGS) -o $@
+all: test_acceptor test_proposer test_state test_client test_server
 
 test_acceptor: test_acceptor.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
 	@echo $^ "====>" $@
@@ -32,6 +28,13 @@ test_state: test_state.o $(OBJ_DIR)/state.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.g
 	@echo $^ "====>" $@
 	$(CXX) $^ $(LDFLAGS) -o $@
 : 
+test_client: test_client.o $(OBJ_DIR)/paxos_client.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
+	@echo $^ "====>" $@
+	$(CXX) $^ $(LDFLAGS) -o $@
+
+test_server: test_server.o $(OBJ_DIR)/paxos_server.o $(OBJ_DIR)/paxos_service.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
+	@echo $^ "====>" $@
+	$(CXX) $^ $(LDFLAGS) -o $@
 #demo_server: demo.pb.o demo.grpc.pb.o demo_server.o
 #	@echo $^ "====>" $@
 #	$(CXX) $^ $(LDFLAGS) -o $@
@@ -45,5 +48,6 @@ test_state: test_state.o $(OBJ_DIR)/state.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.g
 	$(PROTOC) -I $(PROTO_PATH) --cpp_out=$(PROTO_OUT) $<
 
 clean:
-	@rm -rf *.pb.cc *.pb.h *.o test_acceptor test_proposer test_state
+	@rm -rf *.pb.cc *.pb.h *.o test_acceptor test_proposer test_state test_client test_server
+
 

@@ -1,6 +1,6 @@
 
 #include "comdef.h"
-#include "paxos_client.h">
+#include "paxos_client.h"
 
 #ifndef PROPOSER_H
 #define PROPOSER_H
