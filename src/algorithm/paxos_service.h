@@ -21,7 +21,7 @@ class PaxosService final : public Paxos::Service {
     Status OnSuccess(ServerContext *context, const SuccessRequest *request,
         SuccessReply *reply) override;
   private:
-    std::shared_ptr<Acceptor> pAcceptor_;
+    std::unique_ptr<Acceptor> pAcceptor_;
 };
 
 #endif

@@ -1,6 +1,5 @@
 
 #include "comdef.h"
-#include "paxos_client.h"
 
 #ifndef PROPOSER_H
 #define PROPOSER_H
@@ -35,7 +34,7 @@ class ProposerState {
     uint32_t firstUnchosenIndex_;
     uint32_t maxRound_;
     uint32_t nextIndex_;
-    uint32_t nodeID_;
+    uint32_t nodeID_;        //暂时不用该属性
     bool prepared_;
 };
 
@@ -44,18 +43,16 @@ class Proposer {
     Proposer();
     ~Proposer();
 
-    void SendPrepare(const PrepareRequest &request, PrepareReply &reply);
-    void SendAccept(const AcceptRequest &request, AcceptReply &reply);
-    void SendSuccess(const SuccessRequest &request, SuccessReply &reply);
+    void SetPrepareReply(const PrepareReply &reply);
+    void SetAcceptReply(const AcceptReply &reply);
+    void SetSuccessReply(const SuccessReply &reply);
 
-  private:
-    void NewPrepareRequest(PrepareRequest &request);
-    void NewAcceptRequest(AcceptRequest &request);
-    void NewSuccessRequest(SuccessRequest &request);
+    void GetPrepareRequest(PrepareRequest &request);
+    void GetAcceptRequest(AcceptRequest &request);
+    void GetSuccessRequest(SuccessRequest &request);
 
   private:
     ProposerState state_;
-    std::vector<PaxosClient*> peers_;
 };
 
 #endif

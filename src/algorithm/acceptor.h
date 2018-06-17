@@ -37,11 +37,6 @@ class AcceptState {
     uint32_t minProposal_;
     uint32_t firstUnchosenIndex_;
     std::map<uint32_t, ProposalEntry> acceptedProposal_;
-
-
-    //std::map<uint32_t, uint32_t> acceptedProposal_;
-    //std::map<uint32_t, std::string> acceptedValue;
-
 };
 
 class Acceptor {
