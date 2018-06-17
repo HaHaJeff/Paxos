@@ -10,7 +10,7 @@
 
 class ProposerState {
   public:
-    ProposerState() : maxRound_(0), nextIndex_(0), prepared_(false) {  }
+    ProposerState(State *pState) : maxRound_(0), nextIndex_(0), prepared_(false), pState_(pState) {  }
     ~ProposerState() {  }
 
     void SetMaxRound(uint32_t round) { maxRound_ = round; }
@@ -36,11 +36,12 @@ class ProposerState {
     uint32_t nextIndex_;
     uint32_t nodeID_;        //暂时不用该属性
     bool prepared_;
+    State *pState_;
 };
 
 class Proposer {
   public:
-    Proposer();
+    Proposer(State *pState);
     ~Proposer();
 
     void SetPrepareReply(const PrepareReply &reply);

@@ -1,0 +1,2 @@
+现在要做的事情就是填充算法
+在proposer中定义了一个ProposertState，该类负责修改以及获得State Machine中的信息，接口可能需要重新定义

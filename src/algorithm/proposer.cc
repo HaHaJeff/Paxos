@@ -1,6 +1,6 @@
 #include "proposer.h"
 
-Proposer::Proposer() {  }
+Proposer::Proposer(State *pState) : state_(pState) {  }
 
 Proposer::~Proposer() {  }
 
@@ -20,6 +20,7 @@ void Proposer::GetPrepareRequest(PrepareRequest &request) {
   request.set_instanceid(state_.GetFirstUnchosenIndex());
   request.set_nodeid(state_.GetNodeID());
   request.set_proposalid(state_.GetMaxRound());
+  state_.IncMaxRound();
 }
 
 void Proposer::GetAcceptRequest(AcceptRequest &request) {
