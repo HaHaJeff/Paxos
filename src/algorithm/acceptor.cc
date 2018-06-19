@@ -38,6 +38,31 @@ Acceptor::Acceptor() {  }
 Acceptor::~Acceptor() {  }
 
 void Acceptor::RecvPrepare(const PrepareRequest &request, PrepareReply &reply) {
+  int index = request.instanceid();
+  int proposal = request.proposalid();
+  int minProposal = state_.GetMinProposal();
+
+  reply.set_instanceid(index);
+  reply.set_nodeid(1);
+
+  std::string value = "";
+  state_.GetLogValue(index, value);
+  reply.set_value(value);
+
+  reply.set_nomoreaccepted(false);
+
+  //Accept
+  if (proposal > state_.GetMinProposal()) {
+
+    reply.set_proposalid(proposal);
+
+    state_.SetMinProposal(proposal);
+    state_.SetLogProposal(index, ProposalEntry(proposal, ""));
+    state_.SetLastLogIndex(index);
+  } else { //Reject
+
+    reply.set_proposalid(minProposal);
+  }
 
 }
 

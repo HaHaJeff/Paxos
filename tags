@@ -1,0 +1,704 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACCEPTOR_H	./src/algorithm/acceptor.h	7;"	d
+Accept	./src/algorithm/paxos_client.cc	/^void PaxosClient::Accept() {$/;"	f	class:PaxosClient
+AcceptReply	./src/algorithm/rpc.pb.cc	/^AcceptReply::AcceptReply()$/;"	f	class:AcceptReply
+AcceptReply	./src/algorithm/rpc.pb.cc	/^AcceptReply::AcceptReply(const AcceptReply& from)$/;"	f	class:AcceptReply
+AcceptReply	./src/algorithm/rpc.pb.h	/^    : AcceptReply() {$/;"	f	class:AcceptReply
+AcceptReply	./src/algorithm/rpc.pb.h	/^class AcceptReply : public ::google::protobuf::Message \/* @@protoc_insertion_point(class_definition:AcceptReply) *\/ {$/;"	c
+AcceptReplyDefaultTypeInternal	./src/algorithm/rpc.pb.cc	/^class AcceptReplyDefaultTypeInternal {$/;"	c	file:
+AcceptRequest	./src/algorithm/rpc.pb.cc	/^AcceptRequest::AcceptRequest()$/;"	f	class:AcceptRequest
+AcceptRequest	./src/algorithm/rpc.pb.cc	/^AcceptRequest::AcceptRequest(const AcceptRequest& from)$/;"	f	class:AcceptRequest
+AcceptRequest	./src/algorithm/rpc.pb.h	/^    : AcceptRequest() {$/;"	f	class:AcceptRequest
+AcceptRequest	./src/algorithm/rpc.pb.h	/^class AcceptRequest : public ::google::protobuf::Message \/* @@protoc_insertion_point(class_definition:AcceptRequest) *\/ {$/;"	c
+AcceptRequestDefaultTypeInternal	./src/algorithm/rpc.pb.cc	/^class AcceptRequestDefaultTypeInternal {$/;"	c	file:
+AcceptState	./src/algorithm/acceptor.cc	/^AcceptState::AcceptState() : lastLogIndex_(0), minProposal_(0), firstUnchosenIndex_(0) {  }$/;"	f	class:AcceptState
+AcceptState	./src/algorithm/acceptor.h	/^class AcceptState {$/;"	c
+Acceptor	./src/algorithm/acceptor.cc	/^Acceptor::Acceptor() {  }$/;"	f	class:Acceptor
+Acceptor	./src/algorithm/acceptor.h	/^class Acceptor {$/;"	c
+AddDescriptors	./src/algorithm/rpc.pb.cc	/^void AddDescriptors() {$/;"	f	namespace:protobuf_rpc_2eproto
+AddDescriptorsImpl	./src/algorithm/rpc.pb.cc	/^void AddDescriptorsImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+AddToStateMachine	./src/algorithm/proposer.cc	/^void ProposerState::AddToStateMachine(const ProposalEntry &entry) {$/;"	f	class:ProposerState
+AddToStateMachine	./src/algorithm/state.cc	/^bool StateMachine::AddToStateMachine(const LogEntry &entry) {$/;"	f	class:StateMachine
+AsyncOnAccept	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::AcceptReply>> AsyncOnAccept(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::final
+AsyncOnAccept	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::AcceptReply>> AsyncOnAccept(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::StubInterface
+AsyncOnAcceptRaw	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::ClientAsyncResponseReader< ::AcceptReply>* Paxos::Stub::AsyncOnAcceptRaw(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:Paxos::Stub
+AsyncOnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::PrepareReply>> AsyncOnPrepare(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::final
+AsyncOnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::PrepareReply>> AsyncOnPrepare(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::StubInterface
+AsyncOnPrepareRaw	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::ClientAsyncResponseReader< ::PrepareReply>* Paxos::Stub::AsyncOnPrepareRaw(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:Paxos::Stub
+AsyncOnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::SuccessReply>> AsyncOnSuccess(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::final
+AsyncOnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::SuccessReply>> AsyncOnSuccess(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::StubInterface
+AsyncOnSuccessRaw	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::ClientAsyncResponseReader< ::SuccessReply>* Paxos::Stub::AsyncOnSuccessRaw(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:Paxos::Stub
+AsyncService	./src/algorithm/rpc.grpc.pb.h	/^  typedef WithAsyncMethod_OnPrepare<WithAsyncMethod_OnAccept<WithAsyncMethod_OnSuccess<Service > > > AsyncService;$/;"	t	class:final
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithAsyncMethod_OnAccept
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithAsyncMethod_OnPrepare
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithAsyncMethod_OnSuccess
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithGenericMethod_OnAccept
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithGenericMethod_OnPrepare
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithGenericMethod_OnSuccess
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithStreamedUnaryMethod_OnAccept
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithStreamedUnaryMethod_OnPrepare
+BaseClassMustBeDerivedFromService	./src/algorithm/rpc.grpc.pb.h	/^    void BaseClassMustBeDerivedFromService(const Service *service) {}$/;"	f	class:final::WithStreamedUnaryMethod_OnSuccess
+ByteSizeLong	./src/algorithm/rpc.pb.cc	/^size_t AcceptReply::ByteSizeLong() const {$/;"	f	class:AcceptReply
+ByteSizeLong	./src/algorithm/rpc.pb.cc	/^size_t AcceptRequest::ByteSizeLong() const {$/;"	f	class:AcceptRequest
+ByteSizeLong	./src/algorithm/rpc.pb.cc	/^size_t PrepareReply::ByteSizeLong() const {$/;"	f	class:PrepareReply
+ByteSizeLong	./src/algorithm/rpc.pb.cc	/^size_t PrepareRequest::ByteSizeLong() const {$/;"	f	class:PrepareRequest
+ByteSizeLong	./src/algorithm/rpc.pb.cc	/^size_t SuccessReply::ByteSizeLong() const {$/;"	f	class:SuccessReply
+ByteSizeLong	./src/algorithm/rpc.pb.cc	/^size_t SuccessRequest::ByteSizeLong() const {$/;"	f	class:SuccessRequest
+COMMDEF_H	./src/algorithm/comdef.h	2;"	d
+CXX	./src/algorithm/Makefile	/^CXX = g++$/;"	m
+CXX	./src/test/Makefile	/^CXX = g++$/;"	m
+CanExecute	./src/algorithm/state.h	/^    bool CanExecute() {$/;"	f	class:StateMachine
+Clear	./src/algorithm/rpc.pb.cc	/^void AcceptReply::Clear() {$/;"	f	class:AcceptReply
+Clear	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::Clear() {$/;"	f	class:AcceptRequest
+Clear	./src/algorithm/rpc.pb.cc	/^void PrepareReply::Clear() {$/;"	f	class:PrepareReply
+Clear	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::Clear() {$/;"	f	class:PrepareRequest
+Clear	./src/algorithm/rpc.pb.cc	/^void SuccessReply::Clear() {$/;"	f	class:SuccessReply
+Clear	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::Clear() {$/;"	f	class:SuccessRequest
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void AcceptReply::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:AcceptReply
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void AcceptReply::CopyFrom(const AcceptReply& from) {$/;"	f	class:AcceptReply
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:AcceptRequest
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::CopyFrom(const AcceptRequest& from) {$/;"	f	class:AcceptRequest
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void PrepareReply::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:PrepareReply
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void PrepareReply::CopyFrom(const PrepareReply& from) {$/;"	f	class:PrepareReply
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:PrepareRequest
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::CopyFrom(const PrepareRequest& from) {$/;"	f	class:PrepareRequest
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void SuccessReply::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:SuccessReply
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void SuccessReply::CopyFrom(const SuccessReply& from) {$/;"	f	class:SuccessReply
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::CopyFrom(const ::google::protobuf::Message& from) {$/;"	f	class:SuccessRequest
+CopyFrom	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::CopyFrom(const SuccessRequest& from) {$/;"	f	class:SuccessRequest
+DO_	./src/algorithm/rpc.pb.cc	1113;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	1206;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	1502;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	1583;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	1860;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	1925;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	2177;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	2230;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	393;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	460;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	718;"	d	file:
+DO_	./src/algorithm/rpc.pb.cc	811;"	d	file:
+GOOGLE_PROTOBUF_ATTRIBUTE_COLD	./src/algorithm/rpc.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;$/;"	m	namespace:protobuf_rpc_2eproto	file:
+GRPC_CPP_PLUGIN	./src/algorithm/Makefile	/^GRPC_CPP_PLUGIN = grpc_cpp_plugin$/;"	m
+GRPC_CPP_PLUGIN	./src/test/Makefile	/^GRPC_CPP_PLUGIN = grpc_cpp_plugin$/;"	m
+GRPC_CPP_PLUGIN_PATH	./src/algorithm/Makefile	/^GRPC_CPP_PLUGIN_PATH ?= `which $(GRPC_CPP_PLUGIN)`$/;"	m
+GRPC_CPP_PLUGIN_PATH	./src/test/Makefile	/^GRPC_CPP_PLUGIN_PATH ?= `which $(GRPC_CPP_PLUGIN)`$/;"	m
+GRPC_rpc_2eproto__INCLUDED	./src/algorithm/rpc.grpc.pb.h	5;"	d
+GetAcceptRequest	./src/algorithm/paxos_client.h	/^    void GetAcceptRequest(AcceptRequest &request) {$/;"	f	class:PaxosClient
+GetAcceptRequest	./src/algorithm/proposer.cc	/^void Proposer::GetAcceptRequest(AcceptRequest &request) {$/;"	f	class:Proposer
+GetAcceptRequest	./src/algorithm/proposer.cc	/^void ProposerState::GetAcceptRequest(AcceptRequest &request, const std::string &value, uint32_t index, uint32_t firstUnchosenIndex) {$/;"	f	class:ProposerState
+GetArenaNoVirtual	./src/algorithm/rpc.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:AcceptReply
+GetArenaNoVirtual	./src/algorithm/rpc.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:AcceptRequest
+GetArenaNoVirtual	./src/algorithm/rpc.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:PrepareReply
+GetArenaNoVirtual	./src/algorithm/rpc.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:PrepareRequest
+GetArenaNoVirtual	./src/algorithm/rpc.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:SuccessReply
+GetArenaNoVirtual	./src/algorithm/rpc.pb.h	/^  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {$/;"	f	class:SuccessRequest
+GetFirstUnchosenIndex	./src/algorithm/proposer.h	/^    uint32_t GetFirstUnchosenIndex() const { return firstUnchosenIndex_; }$/;"	f	class:ProposerState
+GetLastLogIndex	./src/algorithm/acceptor.h	/^    uint32_t GetLastLogIndex() const {$/;"	f	class:AcceptState
+GetLogProposal	./src/algorithm/acceptor.cc	/^bool AcceptState::GetLogProposal(uint32_t index, ProposalEntry &proposal) {$/;"	f	class:AcceptState
+GetLogValue	./src/algorithm/acceptor.cc	/^bool AcceptState::GetLogValue(uint32_t index, std::string &value) {$/;"	f	class:AcceptState
+GetMaxRound	./src/algorithm/proposer.h	/^    uint32_t GetMaxRound() const { return maxRound_; }$/;"	f	class:ProposerState
+GetMetadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata AcceptReply::GetMetadata() const {$/;"	f	class:AcceptReply
+GetMetadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata AcceptRequest::GetMetadata() const {$/;"	f	class:AcceptRequest
+GetMetadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata PrepareReply::GetMetadata() const {$/;"	f	class:PrepareReply
+GetMetadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata PrepareRequest::GetMetadata() const {$/;"	f	class:PrepareRequest
+GetMetadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata SuccessReply::GetMetadata() const {$/;"	f	class:SuccessReply
+GetMetadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata SuccessRequest::GetMetadata() const {$/;"	f	class:SuccessRequest
+GetMinProposal	./src/algorithm/acceptor.h	/^    uint32_t GetMinProposal() const {$/;"	f	class:AcceptState
+GetNodeID	./src/algorithm/proposer.h	/^    uint32_t GetNodeID() const { return nodeID_; }$/;"	f	class:ProposerState
+GetPeerAcceptedProposal	./src/algorithm/proposer.h	/^    PrepareReply GetPeerAcceptedProposal(uint32_t instance) { return peerAcceptedProposal_[instance]; }$/;"	f	class:ProposerState
+GetPrepareRequest	./src/algorithm/paxos_client.h	/^    void GetPrepareRequest(PrepareRequest &request) {$/;"	f	class:PaxosClient
+GetPrepareRequest	./src/algorithm/proposer.cc	/^void Proposer::GetPrepareRequest(PrepareRequest &request) {$/;"	f	class:Proposer
+GetSuccessRequest	./src/algorithm/paxos_client.h	/^    void GetSuccessRequest(SuccessRequest &request) {$/;"	f	class:PaxosClient
+GetSuccessRequest	./src/algorithm/proposer.cc	/^void Proposer::GetSuccessRequest(SuccessRequest &request) {$/;"	f	class:Proposer
+IncMaxRound	./src/algorithm/proposer.h	/^    void IncMaxRound() { maxRound_ += 1; }$/;"	f	class:ProposerState
+InitAsDefaultInstance	./src/algorithm/rpc.pb.cc	/^void AcceptReply::InitAsDefaultInstance() {$/;"	f	class:AcceptReply
+InitAsDefaultInstance	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::InitAsDefaultInstance() {$/;"	f	class:AcceptRequest
+InitAsDefaultInstance	./src/algorithm/rpc.pb.cc	/^void PrepareReply::InitAsDefaultInstance() {$/;"	f	class:PrepareReply
+InitAsDefaultInstance	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::InitAsDefaultInstance() {$/;"	f	class:PrepareRequest
+InitAsDefaultInstance	./src/algorithm/rpc.pb.cc	/^void SuccessReply::InitAsDefaultInstance() {$/;"	f	class:SuccessReply
+InitAsDefaultInstance	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::InitAsDefaultInstance() {$/;"	f	class:SuccessRequest
+InitDefaults	./src/algorithm/rpc.pb.h	/^inline void InitDefaults() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsAcceptReply	./src/algorithm/rpc.pb.cc	/^void InitDefaultsAcceptReply() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsAcceptReplyImpl	./src/algorithm/rpc.pb.cc	/^void InitDefaultsAcceptReplyImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsAcceptRequest	./src/algorithm/rpc.pb.cc	/^void InitDefaultsAcceptRequest() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsAcceptRequestImpl	./src/algorithm/rpc.pb.cc	/^void InitDefaultsAcceptRequestImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsPrepareReply	./src/algorithm/rpc.pb.cc	/^void InitDefaultsPrepareReply() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsPrepareReplyImpl	./src/algorithm/rpc.pb.cc	/^void InitDefaultsPrepareReplyImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsPrepareRequest	./src/algorithm/rpc.pb.cc	/^void InitDefaultsPrepareRequest() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsPrepareRequestImpl	./src/algorithm/rpc.pb.cc	/^void InitDefaultsPrepareRequestImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsSuccessReply	./src/algorithm/rpc.pb.cc	/^void InitDefaultsSuccessReply() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsSuccessReplyImpl	./src/algorithm/rpc.pb.cc	/^void InitDefaultsSuccessReplyImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsSuccessRequest	./src/algorithm/rpc.pb.cc	/^void InitDefaultsSuccessRequest() {$/;"	f	namespace:protobuf_rpc_2eproto
+InitDefaultsSuccessRequestImpl	./src/algorithm/rpc.pb.cc	/^void InitDefaultsSuccessRequestImpl() {$/;"	f	namespace:protobuf_rpc_2eproto
+InternalSerializeWithCachedSizesToArray	./src/algorithm/rpc.pb.cc	/^::google::protobuf::uint8* AcceptReply::InternalSerializeWithCachedSizesToArray($/;"	f	class:AcceptReply
+InternalSerializeWithCachedSizesToArray	./src/algorithm/rpc.pb.cc	/^::google::protobuf::uint8* AcceptRequest::InternalSerializeWithCachedSizesToArray($/;"	f	class:AcceptRequest
+InternalSerializeWithCachedSizesToArray	./src/algorithm/rpc.pb.cc	/^::google::protobuf::uint8* PrepareReply::InternalSerializeWithCachedSizesToArray($/;"	f	class:PrepareReply
+InternalSerializeWithCachedSizesToArray	./src/algorithm/rpc.pb.cc	/^::google::protobuf::uint8* PrepareRequest::InternalSerializeWithCachedSizesToArray($/;"	f	class:PrepareRequest
+InternalSerializeWithCachedSizesToArray	./src/algorithm/rpc.pb.cc	/^::google::protobuf::uint8* SuccessReply::InternalSerializeWithCachedSizesToArray($/;"	f	class:SuccessReply
+InternalSerializeWithCachedSizesToArray	./src/algorithm/rpc.pb.cc	/^::google::protobuf::uint8* SuccessRequest::InternalSerializeWithCachedSizesToArray($/;"	f	class:SuccessRequest
+InternalSwap	./src/algorithm/rpc.pb.cc	/^void AcceptReply::InternalSwap(AcceptReply* other) {$/;"	f	class:AcceptReply
+InternalSwap	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::InternalSwap(AcceptRequest* other) {$/;"	f	class:AcceptRequest
+InternalSwap	./src/algorithm/rpc.pb.cc	/^void PrepareReply::InternalSwap(PrepareReply* other) {$/;"	f	class:PrepareReply
+InternalSwap	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::InternalSwap(PrepareRequest* other) {$/;"	f	class:PrepareRequest
+InternalSwap	./src/algorithm/rpc.pb.cc	/^void SuccessReply::InternalSwap(SuccessReply* other) {$/;"	f	class:SuccessReply
+InternalSwap	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::InternalSwap(SuccessRequest* other) {$/;"	f	class:SuccessRequest
+IsInitialized	./src/algorithm/rpc.pb.cc	/^bool AcceptReply::IsInitialized() const {$/;"	f	class:AcceptReply
+IsInitialized	./src/algorithm/rpc.pb.cc	/^bool AcceptRequest::IsInitialized() const {$/;"	f	class:AcceptRequest
+IsInitialized	./src/algorithm/rpc.pb.cc	/^bool PrepareReply::IsInitialized() const {$/;"	f	class:PrepareReply
+IsInitialized	./src/algorithm/rpc.pb.cc	/^bool PrepareRequest::IsInitialized() const {$/;"	f	class:PrepareRequest
+IsInitialized	./src/algorithm/rpc.pb.cc	/^bool SuccessReply::IsInitialized() const {$/;"	f	class:SuccessReply
+IsInitialized	./src/algorithm/rpc.pb.cc	/^bool SuccessRequest::IsInitialized() const {$/;"	f	class:SuccessRequest
+IsPrepared	./src/algorithm/proposer.h	/^    bool IsPrepared() { return prepared_; }$/;"	f	class:ProposerState
+LogEntry	./src/algorithm/comdef.h	/^typedef std::pair<uint32_t, ProposalEntry> LogEntry;$/;"	t
+MaybeArenaPtr	./src/algorithm/rpc.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:AcceptReply
+MaybeArenaPtr	./src/algorithm/rpc.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:AcceptRequest
+MaybeArenaPtr	./src/algorithm/rpc.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:PrepareReply
+MaybeArenaPtr	./src/algorithm/rpc.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:PrepareRequest
+MaybeArenaPtr	./src/algorithm/rpc.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:SuccessReply
+MaybeArenaPtr	./src/algorithm/rpc.pb.h	/^  inline void* MaybeArenaPtr() const {$/;"	f	class:SuccessRequest
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void AcceptReply::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:AcceptReply
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void AcceptReply::MergeFrom(const AcceptReply& from) {$/;"	f	class:AcceptReply
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:AcceptRequest
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::MergeFrom(const AcceptRequest& from) {$/;"	f	class:AcceptRequest
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void PrepareReply::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:PrepareReply
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void PrepareReply::MergeFrom(const PrepareReply& from) {$/;"	f	class:PrepareReply
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:PrepareRequest
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::MergeFrom(const PrepareRequest& from) {$/;"	f	class:PrepareRequest
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void SuccessReply::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:SuccessReply
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void SuccessReply::MergeFrom(const SuccessReply& from) {$/;"	f	class:SuccessReply
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::MergeFrom(const ::google::protobuf::Message& from) {$/;"	f	class:SuccessRequest
+MergeFrom	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::MergeFrom(const SuccessRequest& from) {$/;"	f	class:SuccessRequest
+MergePartialFromCodedStream	./src/algorithm/rpc.pb.cc	/^bool AcceptReply::MergePartialFromCodedStream($/;"	f	class:AcceptReply
+MergePartialFromCodedStream	./src/algorithm/rpc.pb.cc	/^bool AcceptRequest::MergePartialFromCodedStream($/;"	f	class:AcceptRequest
+MergePartialFromCodedStream	./src/algorithm/rpc.pb.cc	/^bool PrepareReply::MergePartialFromCodedStream($/;"	f	class:PrepareReply
+MergePartialFromCodedStream	./src/algorithm/rpc.pb.cc	/^bool PrepareRequest::MergePartialFromCodedStream($/;"	f	class:PrepareRequest
+MergePartialFromCodedStream	./src/algorithm/rpc.pb.cc	/^bool SuccessReply::MergePartialFromCodedStream($/;"	f	class:SuccessReply
+MergePartialFromCodedStream	./src/algorithm/rpc.pb.cc	/^bool SuccessRequest::MergePartialFromCodedStream($/;"	f	class:SuccessRequest
+Move	./src/algorithm/state.cc	/^bool StateMachine::Move() {$/;"	f	class:StateMachine
+New	./src/algorithm/rpc.pb.cc	/^AcceptReply* AcceptReply::New(::google::protobuf::Arena* arena) const {$/;"	f	class:AcceptReply
+New	./src/algorithm/rpc.pb.cc	/^AcceptRequest* AcceptRequest::New(::google::protobuf::Arena* arena) const {$/;"	f	class:AcceptRequest
+New	./src/algorithm/rpc.pb.cc	/^PrepareReply* PrepareReply::New(::google::protobuf::Arena* arena) const {$/;"	f	class:PrepareReply
+New	./src/algorithm/rpc.pb.cc	/^PrepareRequest* PrepareRequest::New(::google::protobuf::Arena* arena) const {$/;"	f	class:PrepareRequest
+New	./src/algorithm/rpc.pb.cc	/^SuccessReply* SuccessReply::New(::google::protobuf::Arena* arena) const {$/;"	f	class:SuccessReply
+New	./src/algorithm/rpc.pb.cc	/^SuccessRequest* SuccessRequest::New(::google::protobuf::Arena* arena) const {$/;"	f	class:SuccessRequest
+NewStub	./src/algorithm/rpc.grpc.pb.cc	/^std::unique_ptr< Paxos::Stub> Paxos::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {$/;"	f	class:Paxos
+OBJS	./src/algorithm/Makefile	/^OBJS=$(patsubst %.cc, %.o, $(SRCS))$/;"	m
+OBJ_DIR	./src/test/Makefile	/^OBJ_DIR = ..\/objs$/;"	m
+OnAccept	./src/algorithm/paxos_service.cc	/^Status PaxosService::OnAccept(ServerContext *context, const AcceptRequest *request, AcceptReply *reply) {$/;"	f	class:PaxosService
+OnAccept	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::Status Paxos::Service::OnAccept(::grpc::ServerContext* context, const ::AcceptRequest* request, ::AcceptReply* response) {$/;"	f	class:Paxos::Service
+OnAccept	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::Status Paxos::Stub::OnAccept(::grpc::ClientContext* context, const ::AcceptRequest& request, ::AcceptReply* response) {$/;"	f	class:Paxos::Stub
+OnPrepare	./src/algorithm/paxos_service.cc	/^Status PaxosService::OnPrepare(ServerContext *context, const PrepareRequest *request, PrepareReply *reply) {$/;"	f	class:PaxosService
+OnPrepare	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::Status Paxos::Service::OnPrepare(::grpc::ServerContext* context, const ::PrepareRequest* request, ::PrepareReply* response) {$/;"	f	class:Paxos::Service
+OnPrepare	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::Status Paxos::Stub::OnPrepare(::grpc::ClientContext* context, const ::PrepareRequest& request, ::PrepareReply* response) {$/;"	f	class:Paxos::Stub
+OnSuccess	./src/algorithm/paxos_service.cc	/^Status PaxosService::OnSuccess(ServerContext *context, const SuccessRequest *request, SuccessReply *reply) {$/;"	f	class:PaxosService
+OnSuccess	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::Status Paxos::Service::OnSuccess(::grpc::ServerContext* context, const ::SuccessRequest* request, ::SuccessReply* response) {$/;"	f	class:Paxos::Service
+OnSuccess	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::Status Paxos::Stub::OnSuccess(::grpc::ClientContext* context, const ::SuccessRequest& request, ::SuccessReply* response) {$/;"	f	class:Paxos::Stub
+PAXOSCLIENT_H	./src/algorithm/paxos_client.h	11;"	d
+PAXOS_SERVER_H	./src/algorithm/paxos_server.h	5;"	d
+PAXOS_SERVICE_H	./src/algorithm/paxos_service.h	6;"	d
+PROPOSER_H	./src/algorithm/proposer.h	5;"	d
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  AcceptReply* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  AcceptRequest* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  PrepareReply* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  PrepareRequest* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  SuccessReply* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  SuccessRequest* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  bool IsInitialized() const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  bool IsInitialized() const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  bool IsInitialized() const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  bool IsInitialized() const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  bool IsInitialized() const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  bool IsInitialized() const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  size_t ByteSizeLong() const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  size_t ByteSizeLong() const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  size_t ByteSizeLong() const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  size_t ByteSizeLong() const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  size_t ByteSizeLong() const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  size_t ByteSizeLong() const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void Clear() PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void Clear() PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void Clear() PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void Clear() PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void Clear() PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void Clear() PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void SetCachedSize(int size) const PROTOBUF_FINAL;$/;"	m	class:AcceptReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void SetCachedSize(int size) const PROTOBUF_FINAL;$/;"	m	class:AcceptRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void SetCachedSize(int size) const PROTOBUF_FINAL;$/;"	m	class:PrepareReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void SetCachedSize(int size) const PROTOBUF_FINAL;$/;"	m	class:PrepareRequest
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void SetCachedSize(int size) const PROTOBUF_FINAL;$/;"	m	class:SuccessReply
+PROTOBUF_FINAL	./src/algorithm/rpc.pb.h	/^  void SetCachedSize(int size) const PROTOBUF_FINAL;$/;"	m	class:SuccessRequest
+PROTOBUF_rpc_2eproto__INCLUDED	./src/algorithm/rpc.pb.h	5;"	d
+PROTOC	./src/algorithm/Makefile	/^PROTOC = protoc$/;"	m
+PROTOC	./src/test/Makefile	/^PROTOC = protoc$/;"	m
+PROTO_OUT	./src/algorithm/Makefile	/^PROTO_OUT = .$/;"	m
+PROTO_OUT	./src/test/Makefile	/^PROTO_OUT = .\/$/;"	m
+PROTO_PATH	./src/algorithm/Makefile	/^PROTO_PATH = ..\/..\/proto$/;"	m
+PROTO_PATH	./src/test/Makefile	/^PROTO_PATH = ..\/..\/proto$/;"	m
+PaxosClient	./src/algorithm/paxos_client.cc	/^PaxosClient::PaxosClient(std::shared_ptr<Channel> channel, StateMachine *pSM)$/;"	f	class:PaxosClient
+PaxosClient	./src/algorithm/paxos_client.h	/^class PaxosClient {$/;"	c
+PaxosServer	./src/algorithm/paxos_server.cc	/^PaxosServer::PaxosServer(const std::string &address) : started_(false), address_(address) {  }$/;"	f	class:PaxosServer
+PaxosServer	./src/algorithm/paxos_server.h	/^class PaxosServer {$/;"	c
+PaxosService	./src/algorithm/paxos_service.cc	/^PaxosService::PaxosService() {$/;"	f	class:PaxosService
+Paxos_method_names	./src/algorithm/rpc.grpc.pb.cc	/^static const char* Paxos_method_names[] = {$/;"	v	file:
+Prepare	./src/algorithm/paxos_client.cc	/^void PaxosClient::Prepare() {$/;"	f	class:PaxosClient
+PrepareAsyncOnAccept	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::AcceptReply>> PrepareAsyncOnAccept(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::final
+PrepareAsyncOnAccept	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::AcceptReply>> PrepareAsyncOnAccept(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::StubInterface
+PrepareAsyncOnAcceptRaw	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::ClientAsyncResponseReader< ::AcceptReply>* Paxos::Stub::PrepareAsyncOnAcceptRaw(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:Paxos::Stub
+PrepareAsyncOnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::PrepareReply>> PrepareAsyncOnPrepare(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::final
+PrepareAsyncOnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::PrepareReply>> PrepareAsyncOnPrepare(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::StubInterface
+PrepareAsyncOnPrepareRaw	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::ClientAsyncResponseReader< ::PrepareReply>* Paxos::Stub::PrepareAsyncOnPrepareRaw(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:Paxos::Stub
+PrepareAsyncOnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::SuccessReply>> PrepareAsyncOnSuccess(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::final
+PrepareAsyncOnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::SuccessReply>> PrepareAsyncOnSuccess(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:final::StubInterface
+PrepareAsyncOnSuccessRaw	./src/algorithm/rpc.grpc.pb.cc	/^::grpc::ClientAsyncResponseReader< ::SuccessReply>* Paxos::Stub::PrepareAsyncOnSuccessRaw(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) {$/;"	f	class:Paxos::Stub
+PrepareReply	./src/algorithm/rpc.pb.cc	/^PrepareReply::PrepareReply()$/;"	f	class:PrepareReply
+PrepareReply	./src/algorithm/rpc.pb.cc	/^PrepareReply::PrepareReply(const PrepareReply& from)$/;"	f	class:PrepareReply
+PrepareReply	./src/algorithm/rpc.pb.h	/^    : PrepareReply() {$/;"	f	class:PrepareReply
+PrepareReply	./src/algorithm/rpc.pb.h	/^class PrepareReply : public ::google::protobuf::Message \/* @@protoc_insertion_point(class_definition:PrepareReply) *\/ {$/;"	c
+PrepareReplyDefaultTypeInternal	./src/algorithm/rpc.pb.cc	/^class PrepareReplyDefaultTypeInternal {$/;"	c	file:
+PrepareRequest	./src/algorithm/rpc.pb.cc	/^PrepareRequest::PrepareRequest()$/;"	f	class:PrepareRequest
+PrepareRequest	./src/algorithm/rpc.pb.cc	/^PrepareRequest::PrepareRequest(const PrepareRequest& from)$/;"	f	class:PrepareRequest
+PrepareRequest	./src/algorithm/rpc.pb.h	/^    : PrepareRequest() {$/;"	f	class:PrepareRequest
+PrepareRequest	./src/algorithm/rpc.pb.h	/^class PrepareRequest : public ::google::protobuf::Message \/* @@protoc_insertion_point(class_definition:PrepareRequest) *\/ {$/;"	c
+PrepareRequestDefaultTypeInternal	./src/algorithm/rpc.pb.cc	/^class PrepareRequestDefaultTypeInternal {$/;"	c	file:
+Print	./src/algorithm/state.cc	/^void StateMachine::Print() {$/;"	f	class:StateMachine
+ProposalEntry	./src/algorithm/comdef.h	/^typedef std::pair<uint32_t, std::string> ProposalEntry ;$/;"	t
+Proposer	./src/algorithm/proposer.cc	/^Proposer::Proposer(StateMachine *pState) : state_(pState) {  }$/;"	f	class:Proposer
+Proposer	./src/algorithm/proposer.h	/^class Proposer {$/;"	c
+ProposerState	./src/algorithm/proposer.h	/^    ProposerState(StateMachine *pState) : maxRound_(0), index_(0), prepared_(false), pState_(pState) {  }$/;"	f	class:ProposerState
+ProposerState	./src/algorithm/proposer.h	/^class ProposerState {$/;"	c
+RecvAccept	./src/algorithm/acceptor.cc	/^void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {$/;"	f	class:Acceptor
+RecvPrepare	./src/algorithm/acceptor.cc	/^void Acceptor::RecvPrepare(const PrepareRequest &request, PrepareReply &reply) {$/;"	f	class:Acceptor
+RecvSuccess	./src/algorithm/acceptor.cc	/^void Acceptor::RecvSuccess(const SuccessRequest &request, SuccessReply &reply) {$/;"	f	class:Acceptor
+RequestOnAccept	./src/algorithm/rpc.grpc.pb.h	/^    void RequestOnAccept(::grpc::ServerContext* context, ::AcceptRequest* request, ::grpc::ServerAsyncResponseWriter< ::AcceptReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {$/;"	f	class:final::WithAsyncMethod_OnAccept
+RequestOnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    void RequestOnPrepare(::grpc::ServerContext* context, ::PrepareRequest* request, ::grpc::ServerAsyncResponseWriter< ::PrepareReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {$/;"	f	class:final::WithAsyncMethod_OnPrepare
+RequestOnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    void RequestOnSuccess(::grpc::ServerContext* context, ::SuccessRequest* request, ::grpc::ServerAsyncResponseWriter< ::SuccessReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {$/;"	f	class:final::WithAsyncMethod_OnSuccess
+SRCS	./src/algorithm/Makefile	/^SRCS=${wildcard *.cc}$/;"	m
+STATE_H	./src/algorithm/state.h	4;"	d
+SendAccept	./src/algorithm/paxos_client.cc	/^void PaxosClient::SendAccept(const AcceptRequest &request, AcceptReply &reply) {$/;"	f	class:PaxosClient
+SendPrepare	./src/algorithm/paxos_client.cc	/^void PaxosClient::SendPrepare(const PrepareRequest &request, PrepareReply &reply) {$/;"	f	class:PaxosClient
+SendSuccess	./src/algorithm/paxos_client.cc	/^void PaxosClient::SendSuccess(const SuccessRequest &request, SuccessReply &reply) {$/;"	f	class:PaxosClient
+SerializeWithCachedSizes	./src/algorithm/rpc.pb.cc	/^void AcceptReply::SerializeWithCachedSizes($/;"	f	class:AcceptReply
+SerializeWithCachedSizes	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::SerializeWithCachedSizes($/;"	f	class:AcceptRequest
+SerializeWithCachedSizes	./src/algorithm/rpc.pb.cc	/^void PrepareReply::SerializeWithCachedSizes($/;"	f	class:PrepareReply
+SerializeWithCachedSizes	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::SerializeWithCachedSizes($/;"	f	class:PrepareRequest
+SerializeWithCachedSizes	./src/algorithm/rpc.pb.cc	/^void SuccessReply::SerializeWithCachedSizes($/;"	f	class:SuccessReply
+SerializeWithCachedSizes	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::SerializeWithCachedSizes($/;"	f	class:SuccessRequest
+Service	./src/algorithm/rpc.grpc.pb.cc	/^Paxos::Service::Service() {$/;"	f	class:Paxos::Service
+Service	./src/algorithm/rpc.grpc.pb.h	/^  class Service : public ::grpc::Service {$/;"	c	class:final
+SetAcceptReply	./src/algorithm/paxos_client.h	/^    void SetAcceptReply(const AcceptReply &reply) {$/;"	f	class:PaxosClient
+SetAcceptReply	./src/algorithm/proposer.cc	/^void Proposer::SetAcceptReply(const AcceptReply &reply) {$/;"	f	class:Proposer
+SetCachedSize	./src/algorithm/rpc.pb.cc	/^void AcceptReply::SetCachedSize(int size) const {$/;"	f	class:AcceptReply
+SetCachedSize	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::SetCachedSize(int size) const {$/;"	f	class:AcceptRequest
+SetCachedSize	./src/algorithm/rpc.pb.cc	/^void PrepareReply::SetCachedSize(int size) const {$/;"	f	class:PrepareReply
+SetCachedSize	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::SetCachedSize(int size) const {$/;"	f	class:PrepareRequest
+SetCachedSize	./src/algorithm/rpc.pb.cc	/^void SuccessReply::SetCachedSize(int size) const {$/;"	f	class:SuccessReply
+SetCachedSize	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::SetCachedSize(int size) const {$/;"	f	class:SuccessRequest
+SetLastLogIndex	./src/algorithm/acceptor.h	/^    void SetLastLogIndex(uint32_t index) {$/;"	f	class:AcceptState
+SetLogProposal	./src/algorithm/acceptor.cc	/^void AcceptState::SetLogProposal(uint32_t index, const ProposalEntry &proposal) {$/;"	f	class:AcceptState
+SetMaxRound	./src/algorithm/proposer.h	/^    void SetMaxRound(uint32_t round) { maxRound_ = round; }$/;"	f	class:ProposerState
+SetMinProposal	./src/algorithm/acceptor.h	/^    void SetMinProposal(uint32_t proposal) {$/;"	f	class:AcceptState
+SetNodeID	./src/algorithm/proposer.h	/^    void SetNodeID(uint32_t nodeID) { nodeID_ = nodeID; }$/;"	f	class:ProposerState
+SetNotPrepared	./src/algorithm/proposer.h	/^    void SetNotPrepared() { prepared_ = false; }$/;"	f	class:ProposerState
+SetPeerAcceptedProposal	./src/algorithm/proposer.cc	/^void ProposerState::SetPeerAcceptedProposal(const PrepareReply &entry) {$/;"	f	class:ProposerState
+SetPrepareReply	./src/algorithm/paxos_client.h	/^    void SetPrepareReply(const PrepareReply &reply) {$/;"	f	class:PaxosClient
+SetPrepareReply	./src/algorithm/proposer.cc	/^void Proposer::SetPrepareReply(const PrepareReply &reply) {$/;"	f	class:Proposer
+SetPrepared	./src/algorithm/proposer.h	/^    void SetPrepared() { prepared_ = true; }$/;"	f	class:ProposerState
+SetSuccessReply	./src/algorithm/paxos_client.h	/^    void SetSuccessReply(const SuccessReply &reply) {$/;"	f	class:PaxosClient
+SetSuccessReply	./src/algorithm/proposer.cc	/^void Proposer::SetSuccessReply(const SuccessReply &reply) {$/;"	f	class:Proposer
+SharedCtor	./src/algorithm/rpc.pb.cc	/^void AcceptReply::SharedCtor() {$/;"	f	class:AcceptReply
+SharedCtor	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::SharedCtor() {$/;"	f	class:AcceptRequest
+SharedCtor	./src/algorithm/rpc.pb.cc	/^void PrepareReply::SharedCtor() {$/;"	f	class:PrepareReply
+SharedCtor	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::SharedCtor() {$/;"	f	class:PrepareRequest
+SharedCtor	./src/algorithm/rpc.pb.cc	/^void SuccessReply::SharedCtor() {$/;"	f	class:SuccessReply
+SharedCtor	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::SharedCtor() {$/;"	f	class:SuccessRequest
+SharedDtor	./src/algorithm/rpc.pb.cc	/^void AcceptReply::SharedDtor() {$/;"	f	class:AcceptReply
+SharedDtor	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::SharedDtor() {$/;"	f	class:AcceptRequest
+SharedDtor	./src/algorithm/rpc.pb.cc	/^void PrepareReply::SharedDtor() {$/;"	f	class:PrepareReply
+SharedDtor	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::SharedDtor() {$/;"	f	class:PrepareRequest
+SharedDtor	./src/algorithm/rpc.pb.cc	/^void SuccessReply::SharedDtor() {$/;"	f	class:SuccessReply
+SharedDtor	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::SharedDtor() {$/;"	f	class:SuccessRequest
+SplitStreamedService	./src/algorithm/rpc.grpc.pb.h	/^  typedef Service SplitStreamedService;$/;"	t	class:final
+Start	./src/algorithm/paxos_server.cc	/^void PaxosServer::Start() {$/;"	f	class:PaxosServer
+StateMachine	./src/algorithm/state.cc	/^StateMachine::StateMachine() :$/;"	f	class:StateMachine
+StateMachine	./src/algorithm/state.h	/^class StateMachine {$/;"	c
+StaticDescriptorInitializer	./src/algorithm/rpc.pb.cc	/^  StaticDescriptorInitializer() {$/;"	f	struct:protobuf_rpc_2eproto::StaticDescriptorInitializer
+StaticDescriptorInitializer	./src/algorithm/rpc.pb.cc	/^struct StaticDescriptorInitializer {$/;"	s	namespace:protobuf_rpc_2eproto	file:
+Stop	./src/algorithm/paxos_server.cc	/^void PaxosServer::Stop() {$/;"	f	class:PaxosServer
+StreamedService	./src/algorithm/rpc.grpc.pb.h	/^  typedef WithStreamedUnaryMethod_OnPrepare<WithStreamedUnaryMethod_OnAccept<WithStreamedUnaryMethod_OnSuccess<Service > > > StreamedService;$/;"	t	class:final
+StreamedUnaryService	./src/algorithm/rpc.grpc.pb.h	/^  typedef WithStreamedUnaryMethod_OnPrepare<WithStreamedUnaryMethod_OnAccept<WithStreamedUnaryMethod_OnSuccess<Service > > > StreamedUnaryService;$/;"	t	class:final
+Stub	./src/algorithm/rpc.grpc.pb.cc	/^Paxos::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)$/;"	f	class:Paxos::Stub
+StubInterface	./src/algorithm/rpc.grpc.pb.h	/^  class StubInterface {$/;"	c	class:final
+Success	./src/algorithm/paxos_client.cc	/^void PaxosClient::Success() {$/;"	f	class:PaxosClient
+SuccessReply	./src/algorithm/rpc.pb.cc	/^SuccessReply::SuccessReply()$/;"	f	class:SuccessReply
+SuccessReply	./src/algorithm/rpc.pb.cc	/^SuccessReply::SuccessReply(const SuccessReply& from)$/;"	f	class:SuccessReply
+SuccessReply	./src/algorithm/rpc.pb.h	/^    : SuccessReply() {$/;"	f	class:SuccessReply
+SuccessReply	./src/algorithm/rpc.pb.h	/^class SuccessReply : public ::google::protobuf::Message \/* @@protoc_insertion_point(class_definition:SuccessReply) *\/ {$/;"	c
+SuccessReplyDefaultTypeInternal	./src/algorithm/rpc.pb.cc	/^class SuccessReplyDefaultTypeInternal {$/;"	c	file:
+SuccessRequest	./src/algorithm/rpc.pb.cc	/^SuccessRequest::SuccessRequest()$/;"	f	class:SuccessRequest
+SuccessRequest	./src/algorithm/rpc.pb.cc	/^SuccessRequest::SuccessRequest(const SuccessRequest& from)$/;"	f	class:SuccessRequest
+SuccessRequest	./src/algorithm/rpc.pb.h	/^    : SuccessRequest() {$/;"	f	class:SuccessRequest
+SuccessRequest	./src/algorithm/rpc.pb.h	/^class SuccessRequest : public ::google::protobuf::Message \/* @@protoc_insertion_point(class_definition:SuccessRequest) *\/ {$/;"	c
+SuccessRequestDefaultTypeInternal	./src/algorithm/rpc.pb.cc	/^class SuccessRequestDefaultTypeInternal {$/;"	c	file:
+Swap	./src/algorithm/rpc.pb.cc	/^void AcceptReply::Swap(AcceptReply* other) {$/;"	f	class:AcceptReply
+Swap	./src/algorithm/rpc.pb.cc	/^void AcceptRequest::Swap(AcceptRequest* other) {$/;"	f	class:AcceptRequest
+Swap	./src/algorithm/rpc.pb.cc	/^void PrepareReply::Swap(PrepareReply* other) {$/;"	f	class:PrepareReply
+Swap	./src/algorithm/rpc.pb.cc	/^void PrepareRequest::Swap(PrepareRequest* other) {$/;"	f	class:PrepareRequest
+Swap	./src/algorithm/rpc.pb.cc	/^void SuccessReply::Swap(SuccessReply* other) {$/;"	f	class:SuccessReply
+Swap	./src/algorithm/rpc.pb.cc	/^void SuccessRequest::Swap(SuccessRequest* other) {$/;"	f	class:SuccessRequest
+TableStruct	./src/algorithm/rpc.pb.h	/^struct TableStruct {$/;"	s	namespace:protobuf_rpc_2eproto
+UpdateEntry	./src/algorithm/acceptor.cc	/^void AcceptState::UpdateEntry(uint32_t index, const ProposalEntry &proposal) {$/;"	f	class:AcceptState
+UpdateFirstUnchosenIndex	./src/algorithm/state.cc	/^void StateMachine::UpdateFirstUnchosenIndex() {$/;"	f	class:StateMachine
+WithAsyncMethod_OnAccept	./src/algorithm/rpc.grpc.pb.h	/^    WithAsyncMethod_OnAccept() {$/;"	f	class:final::WithAsyncMethod_OnAccept
+WithAsyncMethod_OnAccept	./src/algorithm/rpc.grpc.pb.h	/^  class WithAsyncMethod_OnAccept : public BaseClass {$/;"	c	class:final
+WithAsyncMethod_OnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    WithAsyncMethod_OnPrepare() {$/;"	f	class:final::WithAsyncMethod_OnPrepare
+WithAsyncMethod_OnPrepare	./src/algorithm/rpc.grpc.pb.h	/^  class WithAsyncMethod_OnPrepare : public BaseClass {$/;"	c	class:final
+WithAsyncMethod_OnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    WithAsyncMethod_OnSuccess() {$/;"	f	class:final::WithAsyncMethod_OnSuccess
+WithAsyncMethod_OnSuccess	./src/algorithm/rpc.grpc.pb.h	/^  class WithAsyncMethod_OnSuccess : public BaseClass {$/;"	c	class:final
+WithGenericMethod_OnAccept	./src/algorithm/rpc.grpc.pb.h	/^    WithGenericMethod_OnAccept() {$/;"	f	class:final::WithGenericMethod_OnAccept
+WithGenericMethod_OnAccept	./src/algorithm/rpc.grpc.pb.h	/^  class WithGenericMethod_OnAccept : public BaseClass {$/;"	c	class:final
+WithGenericMethod_OnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    WithGenericMethod_OnPrepare() {$/;"	f	class:final::WithGenericMethod_OnPrepare
+WithGenericMethod_OnPrepare	./src/algorithm/rpc.grpc.pb.h	/^  class WithGenericMethod_OnPrepare : public BaseClass {$/;"	c	class:final
+WithGenericMethod_OnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    WithGenericMethod_OnSuccess() {$/;"	f	class:final::WithGenericMethod_OnSuccess
+WithGenericMethod_OnSuccess	./src/algorithm/rpc.grpc.pb.h	/^  class WithGenericMethod_OnSuccess : public BaseClass {$/;"	c	class:final
+WithStreamedUnaryMethod_OnAccept	./src/algorithm/rpc.grpc.pb.h	/^    WithStreamedUnaryMethod_OnAccept() {$/;"	f	class:final::WithStreamedUnaryMethod_OnAccept
+WithStreamedUnaryMethod_OnAccept	./src/algorithm/rpc.grpc.pb.h	/^  class WithStreamedUnaryMethod_OnAccept : public BaseClass {$/;"	c	class:final
+WithStreamedUnaryMethod_OnPrepare	./src/algorithm/rpc.grpc.pb.h	/^    WithStreamedUnaryMethod_OnPrepare() {$/;"	f	class:final::WithStreamedUnaryMethod_OnPrepare
+WithStreamedUnaryMethod_OnPrepare	./src/algorithm/rpc.grpc.pb.h	/^  class WithStreamedUnaryMethod_OnPrepare : public BaseClass {$/;"	c	class:final
+WithStreamedUnaryMethod_OnSuccess	./src/algorithm/rpc.grpc.pb.h	/^    WithStreamedUnaryMethod_OnSuccess() {$/;"	f	class:final::WithStreamedUnaryMethod_OnSuccess
+WithStreamedUnaryMethod_OnSuccess	./src/algorithm/rpc.grpc.pb.h	/^  class WithStreamedUnaryMethod_OnSuccess : public BaseClass {$/;"	c	class:final
+_AcceptReply_default_instance_	./src/algorithm/rpc.pb.cc	/^} _AcceptReply_default_instance_;$/;"	v	typeref:class:AcceptReplyDefaultTypeInternal
+_AcceptRequest_default_instance_	./src/algorithm/rpc.pb.cc	/^} _AcceptRequest_default_instance_;$/;"	v	typeref:class:AcceptRequestDefaultTypeInternal
+_PrepareReply_default_instance_	./src/algorithm/rpc.pb.cc	/^} _PrepareReply_default_instance_;$/;"	v	typeref:class:PrepareReplyDefaultTypeInternal
+_PrepareRequest_default_instance_	./src/algorithm/rpc.pb.cc	/^} _PrepareRequest_default_instance_;$/;"	v	typeref:class:PrepareRequestDefaultTypeInternal
+_SuccessReply_default_instance_	./src/algorithm/rpc.pb.cc	/^} _SuccessReply_default_instance_;$/;"	v	typeref:class:SuccessReplyDefaultTypeInternal
+_SuccessRequest_default_instance_	./src/algorithm/rpc.pb.cc	/^} _SuccessRequest_default_instance_;$/;"	v	typeref:class:SuccessRequestDefaultTypeInternal
+_cached_size_	./src/algorithm/rpc.pb.h	/^  mutable int _cached_size_;$/;"	m	class:AcceptReply
+_cached_size_	./src/algorithm/rpc.pb.h	/^  mutable int _cached_size_;$/;"	m	class:AcceptRequest
+_cached_size_	./src/algorithm/rpc.pb.h	/^  mutable int _cached_size_;$/;"	m	class:PrepareReply
+_cached_size_	./src/algorithm/rpc.pb.h	/^  mutable int _cached_size_;$/;"	m	class:PrepareRequest
+_cached_size_	./src/algorithm/rpc.pb.h	/^  mutable int _cached_size_;$/;"	m	class:SuccessReply
+_cached_size_	./src/algorithm/rpc.pb.h	/^  mutable int _cached_size_;$/;"	m	class:SuccessRequest
+_instance	./src/algorithm/rpc.pb.cc	/^      _instance;$/;"	m	class:AcceptReplyDefaultTypeInternal	file:
+_instance	./src/algorithm/rpc.pb.cc	/^      _instance;$/;"	m	class:AcceptRequestDefaultTypeInternal	file:
+_instance	./src/algorithm/rpc.pb.cc	/^      _instance;$/;"	m	class:PrepareReplyDefaultTypeInternal	file:
+_instance	./src/algorithm/rpc.pb.cc	/^      _instance;$/;"	m	class:PrepareRequestDefaultTypeInternal	file:
+_instance	./src/algorithm/rpc.pb.cc	/^      _instance;$/;"	m	class:SuccessReplyDefaultTypeInternal	file:
+_instance	./src/algorithm/rpc.pb.cc	/^      _instance;$/;"	m	class:SuccessRequestDefaultTypeInternal	file:
+_internal_metadata_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:AcceptReply
+_internal_metadata_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:AcceptRequest
+_internal_metadata_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:PrepareReply
+_internal_metadata_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:PrepareRequest
+_internal_metadata_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:SuccessReply
+_internal_metadata_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;$/;"	m	class:SuccessRequest
+acceptedProposal_	./src/algorithm/acceptor.h	/^    std::map<uint32_t, ProposalEntry> acceptedProposal_;$/;"	m	class:AcceptState
+address_	./src/algorithm/paxos_server.h	/^    std::string address_;$/;"	m	class:PaxosServer
+aux	./src/algorithm/rpc.pb.h	/^  static const ::google::protobuf::internal::AuxillaryParseTableField aux[];$/;"	m	struct:protobuf_rpc_2eproto::TableStruct
+channel_	./src/algorithm/rpc.grpc.pb.h	/^    std::shared_ptr< ::grpc::ChannelInterface> channel_;$/;"	m	class:final::final
+chosenFlag_	./src/algorithm/state.h	/^    std::bitset<factor_> chosenFlag_;$/;"	m	class:StateMachine
+chosenProposal_	./src/algorithm/state.h	/^    std::map<uint32_t, ProposalEntry> chosenProposal_;$/;"	m	class:StateMachine
+clear_firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::clear_firstunchosenindex() {$/;"	f	class:AcceptReply
+clear_firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::clear_firstunchosenindex() {$/;"	f	class:AcceptRequest
+clear_firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline void SuccessReply::clear_firstunchosenindex() {$/;"	f	class:SuccessReply
+clear_instanceid	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::clear_instanceid() {$/;"	f	class:AcceptReply
+clear_instanceid	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::clear_instanceid() {$/;"	f	class:AcceptRequest
+clear_instanceid	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::clear_instanceid() {$/;"	f	class:PrepareReply
+clear_instanceid	./src/algorithm/rpc.pb.h	/^inline void PrepareRequest::clear_instanceid() {$/;"	f	class:PrepareRequest
+clear_instanceid	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::clear_instanceid() {$/;"	f	class:SuccessRequest
+clear_nodeid	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::clear_nodeid() {$/;"	f	class:AcceptReply
+clear_nodeid	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::clear_nodeid() {$/;"	f	class:AcceptRequest
+clear_nodeid	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::clear_nodeid() {$/;"	f	class:PrepareReply
+clear_nodeid	./src/algorithm/rpc.pb.h	/^inline void PrepareRequest::clear_nodeid() {$/;"	f	class:PrepareRequest
+clear_nodeid	./src/algorithm/rpc.pb.h	/^inline void SuccessReply::clear_nodeid() {$/;"	f	class:SuccessReply
+clear_nodeid	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::clear_nodeid() {$/;"	f	class:SuccessRequest
+clear_nomoreaccepted	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::clear_nomoreaccepted() {$/;"	f	class:PrepareReply
+clear_proposalid	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::clear_proposalid() {$/;"	f	class:AcceptReply
+clear_proposalid	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::clear_proposalid() {$/;"	f	class:AcceptRequest
+clear_proposalid	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::clear_proposalid() {$/;"	f	class:PrepareReply
+clear_proposalid	./src/algorithm/rpc.pb.h	/^inline void PrepareRequest::clear_proposalid() {$/;"	f	class:PrepareRequest
+clear_value	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::clear_value() {$/;"	f	class:AcceptRequest
+clear_value	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::clear_value() {$/;"	f	class:PrepareReply
+clear_value	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::clear_value() {$/;"	f	class:SuccessRequest
+count_	./src/algorithm/proposer.h	/^    std::map<uint32_t, uint32_t> count_;$/;"	m	class:ProposerState
+default_instance	./src/algorithm/rpc.pb.cc	/^const AcceptReply& AcceptReply::default_instance() {$/;"	f	class:AcceptReply
+default_instance	./src/algorithm/rpc.pb.cc	/^const AcceptRequest& AcceptRequest::default_instance() {$/;"	f	class:AcceptRequest
+default_instance	./src/algorithm/rpc.pb.cc	/^const PrepareReply& PrepareReply::default_instance() {$/;"	f	class:PrepareReply
+default_instance	./src/algorithm/rpc.pb.cc	/^const PrepareRequest& PrepareRequest::default_instance() {$/;"	f	class:PrepareRequest
+default_instance	./src/algorithm/rpc.pb.cc	/^const SuccessReply& SuccessReply::default_instance() {$/;"	f	class:SuccessReply
+default_instance	./src/algorithm/rpc.pb.cc	/^const SuccessRequest& SuccessRequest::default_instance() {$/;"	f	class:SuccessRequest
+descriptor	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::Descriptor* AcceptReply::descriptor() {$/;"	f	class:AcceptReply
+descriptor	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::Descriptor* AcceptRequest::descriptor() {$/;"	f	class:AcceptRequest
+descriptor	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::Descriptor* PrepareReply::descriptor() {$/;"	f	class:PrepareReply
+descriptor	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::Descriptor* PrepareRequest::descriptor() {$/;"	f	class:PrepareRequest
+descriptor	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::Descriptor* SuccessReply::descriptor() {$/;"	f	class:SuccessReply
+descriptor	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::Descriptor* SuccessRequest::descriptor() {$/;"	f	class:SuccessRequest
+entries	./src/algorithm/rpc.pb.h	/^  static const ::google::protobuf::internal::ParseTableField entries[];$/;"	m	struct:protobuf_rpc_2eproto::TableStruct
+factor_	./src/algorithm/state.h	/^    static const uint32_t factor_ = 5;$/;"	m	class:StateMachine
+field_metadata	./src/algorithm/rpc.pb.h	/^  static const ::google::protobuf::internal::FieldMetadata field_metadata[];$/;"	m	struct:protobuf_rpc_2eproto::TableStruct
+file_default_instances	./src/algorithm/rpc.pb.cc	/^static ::google::protobuf::Message const * const file_default_instances[] = {$/;"	m	class:protobuf_rpc_2eproto::google::protobuf	file:
+file_level_metadata	./src/algorithm/rpc.pb.cc	/^::google::protobuf::Metadata file_level_metadata[6];$/;"	m	namespace:protobuf_rpc_2eproto	file:
+final	./src/algorithm/paxos_service.h	/^class PaxosService final : public Paxos::Service {$/;"	c
+final	./src/algorithm/rpc.grpc.pb.h	/^  class Stub final : public StubInterface {$/;"	c	class:final
+final	./src/algorithm/rpc.grpc.pb.h	/^class Paxos final {$/;"	c
+firstIndexInThisWindow_	./src/algorithm/state.h	/^    uint32_t firstIndexInThisWindow_;$/;"	m	class:StateMachine
+firstUnchosenIndex_	./src/algorithm/acceptor.h	/^    uint32_t firstUnchosenIndex_;$/;"	m	class:AcceptState
+firstUnchosenIndex_	./src/algorithm/proposer.h	/^    uint32_t firstUnchosenIndex_;$/;"	m	class:ProposerState
+firstUnchosenIndex_	./src/algorithm/state.h	/^    uint32_t firstUnchosenIndex_;$/;"	m	class:StateMachine
+firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptReply::firstunchosenindex() const {$/;"	f	class:AcceptReply
+firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptRequest::firstunchosenindex() const {$/;"	f	class:AcceptRequest
+firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 SuccessReply::firstunchosenindex() const {$/;"	f	class:SuccessReply
+firstunchosenindex_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 firstunchosenindex_;$/;"	m	class:AcceptReply
+firstunchosenindex_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 firstunchosenindex_;$/;"	m	class:AcceptRequest
+firstunchosenindex_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 firstunchosenindex_;$/;"	m	class:SuccessReply
+grpc	./src/algorithm/rpc.grpc.pb.h	/^namespace grpc {$/;"	n
+index_	./src/algorithm/proposer.h	/^    uint32_t index_;$/;"	m	class:ProposerState
+instanceid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptReply::instanceid() const {$/;"	f	class:AcceptReply
+instanceid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptRequest::instanceid() const {$/;"	f	class:AcceptRequest
+instanceid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 PrepareReply::instanceid() const {$/;"	f	class:PrepareReply
+instanceid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 PrepareRequest::instanceid() const {$/;"	f	class:PrepareRequest
+instanceid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 SuccessRequest::instanceid() const {$/;"	f	class:SuccessRequest
+instanceid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 instanceid_;$/;"	m	class:AcceptReply
+instanceid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 instanceid_;$/;"	m	class:AcceptRequest
+instanceid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 instanceid_;$/;"	m	class:PrepareReply
+instanceid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 instanceid_;$/;"	m	class:PrepareRequest
+instanceid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 instanceid_;$/;"	m	class:SuccessRequest
+internal_default_instance	./src/algorithm/rpc.pb.h	/^  static inline const AcceptReply* internal_default_instance() {$/;"	f	class:AcceptReply
+internal_default_instance	./src/algorithm/rpc.pb.h	/^  static inline const AcceptRequest* internal_default_instance() {$/;"	f	class:AcceptRequest
+internal_default_instance	./src/algorithm/rpc.pb.h	/^  static inline const PrepareReply* internal_default_instance() {$/;"	f	class:PrepareReply
+internal_default_instance	./src/algorithm/rpc.pb.h	/^  static inline const PrepareRequest* internal_default_instance() {$/;"	f	class:PrepareRequest
+internal_default_instance	./src/algorithm/rpc.pb.h	/^  static inline const SuccessReply* internal_default_instance() {$/;"	f	class:SuccessReply
+internal_default_instance	./src/algorithm/rpc.pb.h	/^  static inline const SuccessRequest* internal_default_instance() {$/;"	f	class:SuccessRequest
+kFirstUnchosenIndexFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptReply::kFirstUnchosenIndexFieldNumber;$/;"	m	class:AcceptReply	file:
+kFirstUnchosenIndexFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptRequest::kFirstUnchosenIndexFieldNumber;$/;"	m	class:AcceptRequest	file:
+kFirstUnchosenIndexFieldNumber	./src/algorithm/rpc.pb.cc	/^const int SuccessReply::kFirstUnchosenIndexFieldNumber;$/;"	m	class:SuccessReply	file:
+kFirstUnchosenIndexFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kFirstUnchosenIndexFieldNumber = 1;$/;"	m	class:SuccessReply
+kFirstUnchosenIndexFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kFirstUnchosenIndexFieldNumber = 5;$/;"	m	class:AcceptReply
+kFirstUnchosenIndexFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kFirstUnchosenIndexFieldNumber = 5;$/;"	m	class:AcceptRequest
+kIndexInFileMessages	./src/algorithm/rpc.pb.h	/^  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =$/;"	m	class:AcceptReply
+kIndexInFileMessages	./src/algorithm/rpc.pb.h	/^  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =$/;"	m	class:AcceptRequest
+kIndexInFileMessages	./src/algorithm/rpc.pb.h	/^  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =$/;"	m	class:PrepareReply
+kIndexInFileMessages	./src/algorithm/rpc.pb.h	/^  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =$/;"	m	class:PrepareRequest
+kIndexInFileMessages	./src/algorithm/rpc.pb.h	/^  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =$/;"	m	class:SuccessReply
+kIndexInFileMessages	./src/algorithm/rpc.pb.h	/^  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =$/;"	m	class:SuccessRequest
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptReply::kInstanceIDFieldNumber;$/;"	m	class:AcceptReply	file:
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptRequest::kInstanceIDFieldNumber;$/;"	m	class:AcceptRequest	file:
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareReply::kInstanceIDFieldNumber;$/;"	m	class:PrepareReply	file:
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareRequest::kInstanceIDFieldNumber;$/;"	m	class:PrepareRequest	file:
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int SuccessRequest::kInstanceIDFieldNumber;$/;"	m	class:SuccessRequest	file:
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kInstanceIDFieldNumber = 1;$/;"	m	class:AcceptReply
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kInstanceIDFieldNumber = 1;$/;"	m	class:AcceptRequest
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kInstanceIDFieldNumber = 1;$/;"	m	class:PrepareReply
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kInstanceIDFieldNumber = 1;$/;"	m	class:PrepareRequest
+kInstanceIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kInstanceIDFieldNumber = 1;$/;"	m	class:SuccessRequest
+kNoMoreAcceptedFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareReply::kNoMoreAcceptedFieldNumber;$/;"	m	class:PrepareReply	file:
+kNoMoreAcceptedFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNoMoreAcceptedFieldNumber = 5;$/;"	m	class:PrepareReply
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptReply::kNodeIDFieldNumber;$/;"	m	class:AcceptReply	file:
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptRequest::kNodeIDFieldNumber;$/;"	m	class:AcceptRequest	file:
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareReply::kNodeIDFieldNumber;$/;"	m	class:PrepareReply	file:
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareRequest::kNodeIDFieldNumber;$/;"	m	class:PrepareRequest	file:
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int SuccessReply::kNodeIDFieldNumber;$/;"	m	class:SuccessReply	file:
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int SuccessRequest::kNodeIDFieldNumber;$/;"	m	class:SuccessRequest	file:
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNodeIDFieldNumber = 2;$/;"	m	class:AcceptRequest
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNodeIDFieldNumber = 2;$/;"	m	class:PrepareReply
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNodeIDFieldNumber = 2;$/;"	m	class:PrepareRequest
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNodeIDFieldNumber = 2;$/;"	m	class:SuccessReply
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNodeIDFieldNumber = 2;$/;"	m	class:SuccessRequest
+kNodeIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kNodeIDFieldNumber = 3;$/;"	m	class:AcceptReply
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptReply::kProposalIDFieldNumber;$/;"	m	class:AcceptReply	file:
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptRequest::kProposalIDFieldNumber;$/;"	m	class:AcceptRequest	file:
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareReply::kProposalIDFieldNumber;$/;"	m	class:PrepareReply	file:
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareRequest::kProposalIDFieldNumber;$/;"	m	class:PrepareRequest	file:
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kProposalIDFieldNumber = 3;$/;"	m	class:AcceptRequest
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kProposalIDFieldNumber = 3;$/;"	m	class:PrepareReply
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kProposalIDFieldNumber = 3;$/;"	m	class:PrepareRequest
+kProposalIDFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kProposalIDFieldNumber = 4;$/;"	m	class:AcceptReply
+kValueFieldNumber	./src/algorithm/rpc.pb.cc	/^const int AcceptRequest::kValueFieldNumber;$/;"	m	class:AcceptRequest	file:
+kValueFieldNumber	./src/algorithm/rpc.pb.cc	/^const int PrepareReply::kValueFieldNumber;$/;"	m	class:PrepareReply	file:
+kValueFieldNumber	./src/algorithm/rpc.pb.cc	/^const int SuccessRequest::kValueFieldNumber;$/;"	m	class:SuccessRequest	file:
+kValueFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kValueFieldNumber = 3;$/;"	m	class:SuccessRequest
+kValueFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kValueFieldNumber = 4;$/;"	m	class:AcceptRequest
+kValueFieldNumber	./src/algorithm/rpc.pb.h	/^  static const int kValueFieldNumber = 4;$/;"	m	class:PrepareReply
+lastLogIndex_	./src/algorithm/acceptor.h	/^    uint32_t lastLogIndex_;$/;"	m	class:AcceptState
+main	./src/test/test_acceptor.cc	/^int main()$/;"	f
+main	./src/test/test_client.cc	/^int main()$/;"	f
+main	./src/test/test_proposer.cc	/^int main()$/;"	f
+main	./src/test/test_server.cc	/^int main()$/;"	f
+main	./src/test/test_state.cc	/^int main()$/;"	f
+maxRound_	./src/algorithm/proposer.h	/^    uint32_t maxRound_;$/;"	m	class:ProposerState
+minProposal_	./src/algorithm/acceptor.h	/^    uint32_t minProposal_;$/;"	m	class:AcceptState
+mtx_	./src/algorithm/state.h	/^    std::mutex mtx_;$/;"	m	class:StateMachine
+mutable_value	./src/algorithm/rpc.pb.h	/^inline ::std::string* AcceptRequest::mutable_value() {$/;"	f	class:AcceptRequest
+mutable_value	./src/algorithm/rpc.pb.h	/^inline ::std::string* PrepareReply::mutable_value() {$/;"	f	class:PrepareReply
+mutable_value	./src/algorithm/rpc.pb.h	/^inline ::std::string* SuccessRequest::mutable_value() {$/;"	f	class:SuccessRequest
+nodeID_	./src/algorithm/proposer.h	/^    uint32_t nodeID_;        \/\/暂时不用该属性$/;"	m	class:ProposerState
+nodeid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptReply::nodeid() const {$/;"	f	class:AcceptReply
+nodeid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptRequest::nodeid() const {$/;"	f	class:AcceptRequest
+nodeid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 PrepareReply::nodeid() const {$/;"	f	class:PrepareReply
+nodeid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 PrepareRequest::nodeid() const {$/;"	f	class:PrepareRequest
+nodeid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 SuccessReply::nodeid() const {$/;"	f	class:SuccessReply
+nodeid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 SuccessRequest::nodeid() const {$/;"	f	class:SuccessRequest
+nodeid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 nodeid_;$/;"	m	class:AcceptReply
+nodeid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 nodeid_;$/;"	m	class:AcceptRequest
+nodeid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 nodeid_;$/;"	m	class:PrepareReply
+nodeid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 nodeid_;$/;"	m	class:PrepareRequest
+nodeid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 nodeid_;$/;"	m	class:SuccessReply
+nodeid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 nodeid_;$/;"	m	class:SuccessRequest
+nomoreaccepted	./src/algorithm/rpc.pb.h	/^inline bool PrepareReply::nomoreaccepted() const {$/;"	f	class:PrepareReply
+nomoreaccepted_	./src/algorithm/rpc.pb.h	/^  bool nomoreaccepted_;$/;"	m	class:PrepareReply
+offsets	./src/algorithm/rpc.pb.h	/^  static const ::google::protobuf::uint32 offsets[];$/;"	m	struct:protobuf_rpc_2eproto::TableStruct
+operator =	./src/algorithm/rpc.pb.h	/^  inline AcceptReply& operator=(const AcceptReply& from) {$/;"	f	class:AcceptReply
+operator =	./src/algorithm/rpc.pb.h	/^  inline AcceptRequest& operator=(const AcceptRequest& from) {$/;"	f	class:AcceptRequest
+operator =	./src/algorithm/rpc.pb.h	/^  inline PrepareReply& operator=(const PrepareReply& from) {$/;"	f	class:PrepareReply
+operator =	./src/algorithm/rpc.pb.h	/^  inline PrepareRequest& operator=(const PrepareRequest& from) {$/;"	f	class:PrepareRequest
+operator =	./src/algorithm/rpc.pb.h	/^  inline SuccessReply& operator=(const SuccessReply& from) {$/;"	f	class:SuccessReply
+operator =	./src/algorithm/rpc.pb.h	/^  inline SuccessRequest& operator=(const SuccessRequest& from) {$/;"	f	class:SuccessRequest
+override	./src/algorithm/paxos_service.h	/^        AcceptReply *reply) override;$/;"	m	class:final
+override	./src/algorithm/paxos_service.h	/^        PrepareReply *reply) override;$/;"	m	class:final
+override	./src/algorithm/paxos_service.h	/^        SuccessReply *reply) override;$/;"	m	class:final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::ClientAsyncResponseReader< ::AcceptReply>* AsyncOnAcceptRaw(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::ClientAsyncResponseReader< ::AcceptReply>* PrepareAsyncOnAcceptRaw(::grpc::ClientContext* context, const ::AcceptRequest& request, ::grpc::CompletionQueue* cq) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::ClientAsyncResponseReader< ::PrepareReply>* AsyncOnPrepareRaw(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::ClientAsyncResponseReader< ::PrepareReply>* PrepareAsyncOnPrepareRaw(::grpc::ClientContext* context, const ::PrepareRequest& request, ::grpc::CompletionQueue* cq) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::ClientAsyncResponseReader< ::SuccessReply>* AsyncOnSuccessRaw(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::ClientAsyncResponseReader< ::SuccessReply>* PrepareAsyncOnSuccessRaw(::grpc::ClientContext* context, const ::SuccessRequest& request, ::grpc::CompletionQueue* cq) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::Status OnAccept(::grpc::ClientContext* context, const ::AcceptRequest& request, ::AcceptReply* response) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::Status OnPrepare(::grpc::ClientContext* context, const ::PrepareRequest& request, ::PrepareReply* response) override;$/;"	m	class:final::final
+override	./src/algorithm/rpc.grpc.pb.h	/^    ::grpc::Status OnSuccess(::grpc::ClientContext* context, const ::SuccessRequest& request, ::SuccessReply* response) override;$/;"	m	class:final::final
+pAcceptor_	./src/algorithm/paxos_service.h	/^    std::unique_ptr<Acceptor> pAcceptor_;$/;"	m	class:final
+pProposer_	./src/algorithm/paxos_client.h	/^    std::unique_ptr<Proposer> pProposer_;$/;"	m	class:PaxosClient
+pState_	./src/algorithm/proposer.h	/^    StateMachine *pState_;$/;"	m	class:ProposerState
+peerAcceptedProposal_	./src/algorithm/proposer.h	/^    std::map<uint32_t, PrepareReply> peerAcceptedProposal_;$/;"	m	class:ProposerState
+prepared_	./src/algorithm/proposer.h	/^    bool prepared_;$/;"	m	class:ProposerState
+proposalid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptReply::proposalid() const {$/;"	f	class:AcceptReply
+proposalid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 AcceptRequest::proposalid() const {$/;"	f	class:AcceptRequest
+proposalid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 PrepareReply::proposalid() const {$/;"	f	class:PrepareReply
+proposalid	./src/algorithm/rpc.pb.h	/^inline ::google::protobuf::uint64 PrepareRequest::proposalid() const {$/;"	f	class:PrepareRequest
+proposalid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 proposalid_;$/;"	m	class:AcceptReply
+proposalid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 proposalid_;$/;"	m	class:AcceptRequest
+proposalid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 proposalid_;$/;"	m	class:PrepareReply
+proposalid_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::uint64 proposalid_;$/;"	m	class:PrepareRequest
+protobuf_AssignDescriptors	./src/algorithm/rpc.pb.cc	/^void protobuf_AssignDescriptors() {$/;"	f	namespace:protobuf_rpc_2eproto
+protobuf_AssignDescriptorsOnce	./src/algorithm/rpc.pb.cc	/^void protobuf_AssignDescriptorsOnce() {$/;"	f	namespace:protobuf_rpc_2eproto
+protobuf_RegisterTypes	./src/algorithm/rpc.pb.cc	/^void protobuf_RegisterTypes(const ::std::string&) {$/;"	f	namespace:protobuf_rpc_2eproto
+protobuf_rpc_2eproto	./src/algorithm/rpc.pb.cc	/^namespace protobuf_rpc_2eproto {$/;"	n	file:
+protobuf_rpc_2eproto	./src/algorithm/rpc.pb.h	/^namespace protobuf_rpc_2eproto {$/;"	n
+protodesc_cold	./src/algorithm/rpc.pb.cc	/^const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {$/;"	m	namespace:protobuf_rpc_2eproto	file:
+protodesc_cold	./src/algorithm/rpc.pb.cc	/^static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {$/;"	m	namespace:protobuf_rpc_2eproto	file:
+release_value	./src/algorithm/rpc.pb.h	/^inline ::std::string* AcceptRequest::release_value() {$/;"	f	class:AcceptRequest
+release_value	./src/algorithm/rpc.pb.h	/^inline ::std::string* PrepareReply::release_value() {$/;"	f	class:PrepareReply
+release_value	./src/algorithm/rpc.pb.h	/^inline ::std::string* SuccessRequest::release_value() {$/;"	f	class:SuccessRequest
+rpcmethod_OnAccept_	./src/algorithm/rpc.grpc.pb.h	/^    const ::grpc::internal::RpcMethod rpcmethod_OnAccept_;$/;"	m	class:final::final
+rpcmethod_OnPrepare_	./src/algorithm/rpc.grpc.pb.h	/^    const ::grpc::internal::RpcMethod rpcmethod_OnPrepare_;$/;"	m	class:final::final
+rpcmethod_OnSuccess_	./src/algorithm/rpc.grpc.pb.h	/^    const ::grpc::internal::RpcMethod rpcmethod_OnSuccess_;$/;"	m	class:final::final
+schema	./src/algorithm/rpc.pb.h	/^  static const ::google::protobuf::internal::ParseTable schema[6];$/;"	m	struct:protobuf_rpc_2eproto::TableStruct
+serialization_table	./src/algorithm/rpc.pb.h	/^  static const ::google::protobuf::internal::SerializationTable serialization_table[];$/;"	m	struct:protobuf_rpc_2eproto::TableStruct
+server_	./src/algorithm/paxos_server.h	/^    std::unique_ptr<Server> server_;$/;"	m	class:PaxosServer
+service_	./src/algorithm/paxos_server.h	/^    PaxosService service_;$/;"	m	class:PaxosServer
+service_full_name	./src/algorithm/rpc.grpc.pb.h	/^  static constexpr char const* service_full_name() {$/;"	f	class:final
+set_allocated_value	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_allocated_value(::std::string* value) {$/;"	f	class:AcceptRequest
+set_allocated_value	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_allocated_value(::std::string* value) {$/;"	f	class:PrepareReply
+set_allocated_value	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_allocated_value(::std::string* value) {$/;"	f	class:SuccessRequest
+set_firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::set_firstunchosenindex(::google::protobuf::uint64 value) {$/;"	f	class:AcceptReply
+set_firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_firstunchosenindex(::google::protobuf::uint64 value) {$/;"	f	class:AcceptRequest
+set_firstunchosenindex	./src/algorithm/rpc.pb.h	/^inline void SuccessReply::set_firstunchosenindex(::google::protobuf::uint64 value) {$/;"	f	class:SuccessReply
+set_instanceid	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::set_instanceid(::google::protobuf::uint64 value) {$/;"	f	class:AcceptReply
+set_instanceid	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_instanceid(::google::protobuf::uint64 value) {$/;"	f	class:AcceptRequest
+set_instanceid	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_instanceid(::google::protobuf::uint64 value) {$/;"	f	class:PrepareReply
+set_instanceid	./src/algorithm/rpc.pb.h	/^inline void PrepareRequest::set_instanceid(::google::protobuf::uint64 value) {$/;"	f	class:PrepareRequest
+set_instanceid	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_instanceid(::google::protobuf::uint64 value) {$/;"	f	class:SuccessRequest
+set_nodeid	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::set_nodeid(::google::protobuf::uint64 value) {$/;"	f	class:AcceptReply
+set_nodeid	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_nodeid(::google::protobuf::uint64 value) {$/;"	f	class:AcceptRequest
+set_nodeid	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_nodeid(::google::protobuf::uint64 value) {$/;"	f	class:PrepareReply
+set_nodeid	./src/algorithm/rpc.pb.h	/^inline void PrepareRequest::set_nodeid(::google::protobuf::uint64 value) {$/;"	f	class:PrepareRequest
+set_nodeid	./src/algorithm/rpc.pb.h	/^inline void SuccessReply::set_nodeid(::google::protobuf::uint64 value) {$/;"	f	class:SuccessReply
+set_nodeid	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_nodeid(::google::protobuf::uint64 value) {$/;"	f	class:SuccessRequest
+set_nomoreaccepted	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_nomoreaccepted(bool value) {$/;"	f	class:PrepareReply
+set_proposalid	./src/algorithm/rpc.pb.h	/^inline void AcceptReply::set_proposalid(::google::protobuf::uint64 value) {$/;"	f	class:AcceptReply
+set_proposalid	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_proposalid(::google::protobuf::uint64 value) {$/;"	f	class:AcceptRequest
+set_proposalid	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_proposalid(::google::protobuf::uint64 value) {$/;"	f	class:PrepareReply
+set_proposalid	./src/algorithm/rpc.pb.h	/^inline void PrepareRequest::set_proposalid(::google::protobuf::uint64 value) {$/;"	f	class:PrepareRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_value(::std::string&& value) {$/;"	f	class:AcceptRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_value(const ::std::string& value) {$/;"	f	class:AcceptRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_value(const char* value) {$/;"	f	class:AcceptRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void AcceptRequest::set_value(const void* value, size_t size) {$/;"	f	class:AcceptRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_value(::std::string&& value) {$/;"	f	class:PrepareReply
+set_value	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_value(const ::std::string& value) {$/;"	f	class:PrepareReply
+set_value	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_value(const char* value) {$/;"	f	class:PrepareReply
+set_value	./src/algorithm/rpc.pb.h	/^inline void PrepareReply::set_value(const void* value, size_t size) {$/;"	f	class:PrepareReply
+set_value	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_value(::std::string&& value) {$/;"	f	class:SuccessRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_value(const ::std::string& value) {$/;"	f	class:SuccessRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_value(const char* value) {$/;"	f	class:SuccessRequest
+set_value	./src/algorithm/rpc.pb.h	/^inline void SuccessRequest::set_value(const void* value, size_t size) {$/;"	f	class:SuccessRequest
+started_	./src/algorithm/paxos_server.h	/^    bool started_;$/;"	m	class:PaxosServer
+state_	./src/algorithm/acceptor.h	/^    AcceptState state_;$/;"	m	class:Acceptor
+state_	./src/algorithm/proposer.h	/^    ProposerState state_;$/;"	m	class:Proposer
+static_descriptor_initializer	./src/algorithm/rpc.pb.cc	/^} static_descriptor_initializer;$/;"	m	namespace:protobuf_rpc_2eproto	typeref:struct:protobuf_rpc_2eproto::StaticDescriptorInitializer	file:
+stub_	./src/algorithm/paxos_client.h	/^    std::unique_ptr<Paxos::Stub> stub_;$/;"	m	class:PaxosClient
+swap	./src/algorithm/rpc.pb.h	/^  friend void swap(AcceptReply& a, AcceptReply& b) {$/;"	f	class:AcceptReply
+swap	./src/algorithm/rpc.pb.h	/^  friend void swap(AcceptRequest& a, AcceptRequest& b) {$/;"	f	class:AcceptRequest
+swap	./src/algorithm/rpc.pb.h	/^  friend void swap(PrepareReply& a, PrepareReply& b) {$/;"	f	class:PrepareReply
+swap	./src/algorithm/rpc.pb.h	/^  friend void swap(PrepareRequest& a, PrepareRequest& b) {$/;"	f	class:PrepareRequest
+swap	./src/algorithm/rpc.pb.h	/^  friend void swap(SuccessReply& a, SuccessReply& b) {$/;"	f	class:SuccessReply
+swap	./src/algorithm/rpc.pb.h	/^  friend void swap(SuccessRequest& a, SuccessRequest& b) {$/;"	f	class:SuccessRequest
+toBeChosenValue_	./src/algorithm/proposer.h	/^    std::map<uint32_t, std::string> toBeChosenValue_;$/;"	m	class:Proposer
+value	./src/algorithm/rpc.pb.h	/^inline const ::std::string& AcceptRequest::value() const {$/;"	f	class:AcceptRequest
+value	./src/algorithm/rpc.pb.h	/^inline const ::std::string& PrepareReply::value() const {$/;"	f	class:PrepareReply
+value	./src/algorithm/rpc.pb.h	/^inline const ::std::string& SuccessRequest::value() const {$/;"	f	class:SuccessRequest
+value_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr value_;$/;"	m	class:AcceptRequest
+value_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr value_;$/;"	m	class:PrepareReply
+value_	./src/algorithm/rpc.pb.h	/^  ::google::protobuf::internal::ArenaStringPtr value_;$/;"	m	class:SuccessRequest
+window_	./src/algorithm/state.h	/^    uint32_t window_;$/;"	m	class:StateMachine
+~AcceptReply	./src/algorithm/rpc.pb.cc	/^AcceptReply::~AcceptReply() {$/;"	f	class:AcceptReply
+~AcceptRequest	./src/algorithm/rpc.pb.cc	/^AcceptRequest::~AcceptRequest() {$/;"	f	class:AcceptRequest
+~AcceptState	./src/algorithm/acceptor.cc	/^AcceptState::~AcceptState() {  }$/;"	f	class:AcceptState
+~Acceptor	./src/algorithm/acceptor.cc	/^Acceptor::~Acceptor() {  }$/;"	f	class:Acceptor
+~PaxosServer	./src/algorithm/paxos_server.cc	/^PaxosServer::~PaxosServer() {$/;"	f	class:PaxosServer
+~PrepareReply	./src/algorithm/rpc.pb.cc	/^PrepareReply::~PrepareReply() {$/;"	f	class:PrepareReply
+~PrepareRequest	./src/algorithm/rpc.pb.cc	/^PrepareRequest::~PrepareRequest() {$/;"	f	class:PrepareRequest
+~Proposer	./src/algorithm/proposer.cc	/^Proposer::~Proposer() {  }$/;"	f	class:Proposer
+~ProposerState	./src/algorithm/proposer.h	/^    ~ProposerState() {  }$/;"	f	class:ProposerState
+~Service	./src/algorithm/rpc.grpc.pb.cc	/^Paxos::Service::~Service() {$/;"	f	class:Paxos::Service
+~StubInterface	./src/algorithm/rpc.grpc.pb.h	/^    virtual ~StubInterface() {}$/;"	f	class:final::StubInterface
+~SuccessReply	./src/algorithm/rpc.pb.cc	/^SuccessReply::~SuccessReply() {$/;"	f	class:SuccessReply
+~SuccessRequest	./src/algorithm/rpc.pb.cc	/^SuccessRequest::~SuccessRequest() {$/;"	f	class:SuccessRequest

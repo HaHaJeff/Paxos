@@ -3,6 +3,7 @@
 
 int main()
 {
-  Proposer p;
+  StateMachine sm;
+  Proposer p(&sm);
   return 0;
 }
