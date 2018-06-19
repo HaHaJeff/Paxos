@@ -1,11 +1,39 @@
 #include "proposer.h"
 
-Proposer::Proposer(State *pState) : state_(pState) {  }
+void ProposerState::AddToStateMachine(const ProposalEntry &entry) {
+  LogEntry log(firstUnchosenIndex_, entry);
+  pState_->AddToStateMachine(log);
+}
+
+void ProposerState::GetAcceptRequest(AcceptRequest &request, const std::string &value, uint32_t index, uint32_t firstUnchosenIndex) {
+  request.set_instanceid(peerAcceptedProposal_[index].instanceid());
+  request.set_nodeid(peerAcceptedProposal_[index].nodeid());
+  request.set_proposalid(peerAcceptedProposal_[index].proposalid());
+  request.set_value(peerAcceptedProposal_[index].value().empty() ? value: peerAcceptedProposal_[index].value());
+  //firstunchosenindex或许已经更新过了，因为可能已经AddToStateMachine其他proposal了
+  request.set_firstunchosenindex(firstUnchosenIndex);
+
+}
+
+//set highest proposal
+void ProposerState::SetPeerAcceptedProposal(const PrepareReply &entry) {
+  int instance = entry.instanceid();
+  //means reject
+  if (entry.proposalid() < peerAcceptedProposal_[instance].proposalid()) {
+    return;
+  }
+
+  //means accept
+  peerAcceptedProposal_[instance] = entry;
+  count_[instance]++;
+}
+
+Proposer::Proposer(StateMachine *pState) : state_(pState) {  }
 
 Proposer::~Proposer() {  }
 
 void Proposer::SetPrepareReply(const PrepareReply &reply) {
-
+  state_.SetPeerAcceptedProposal(reply);
 }
 
 void Proposer::SetAcceptReply(const AcceptReply &reply) {
@@ -24,6 +52,8 @@ void Proposer::GetPrepareRequest(PrepareRequest &request) {
 }
 
 void Proposer::GetAcceptRequest(AcceptRequest &request) {
+  std::string value = toBeChosenValue_[request.instanceid()];
+  state_.GetAcceptRequest(request, value, request.instanceid(), state_.GetFirstUnchosenIndex());
 }
 
 void Proposer::GetSuccessRequest(SuccessRequest &request) {

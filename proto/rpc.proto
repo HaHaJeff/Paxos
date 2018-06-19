@@ -18,6 +18,7 @@ message PrepareReply {
   uint64        ProposalID = 3;
   bytes         Value = 4;
   bool          NoMoreAccepted = 5;
+//  bool          Accepted = 6;
 }
 
 message AcceptRequest {
