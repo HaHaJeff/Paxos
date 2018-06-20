@@ -20,35 +20,34 @@ void PaxosClient::AddPeer(const std::pair<uint32_t, std::string> &peer) {
 void PaxosClient::SendPrepare(const PrepareRequest &request, PrepareReply &reply) {
   std::cout << "rpc call OnPrepare" << std::endl;
 
-  /*
-     for (auto &peer: stub_) {
-     ClientContext context;
-     std::shared_ptr<Paxos::Stub> stub = peer.second;
-     stub->OnPrepare(&context, request, &reply);
-     }
-     */
   std::for_each(stub_.begin(), stub_.end(), [&](std::pair<const uint32_t, std::shared_ptr<Paxos::Stub> > peer){
       ClientContext context;
       std::shared_ptr<Paxos::Stub> stub = peer.second;
       stub->OnPrepare(&context, request, &reply);
+      SetPrepareReply(reply);
       });
+
 }
 
 void PaxosClient::SendAccept(const AcceptRequest &request, AcceptReply &reply) {
   std::cout << "rpc call OnAccept" << std::endl;
+
   std::for_each(stub_.begin(), stub_.end(), [&](std::pair<const uint32_t, std::shared_ptr<Paxos::Stub> > peer){
       ClientContext context;
       std::shared_ptr<Paxos::Stub> stub = peer.second;
       stub->OnAccept(&context, request, &reply);
+      SetAcceptReply(reply);
       });
 }
 
 void PaxosClient::SendSuccess(const SuccessRequest &request, SuccessReply &reply) {
   std::cout << "rpc call OnSuccess" << std::endl;
+
   std::for_each(stub_.begin(), stub_.end(), [&](std::pair<const uint32_t, std::shared_ptr<Paxos::Stub> > peer){
       ClientContext context;
       std::shared_ptr<Paxos::Stub> stub = peer.second;
       stub->OnSuccess(&context, request, &reply);
+      SetSuccessReply(reply);
       });
 }
 
@@ -58,7 +57,10 @@ void PaxosClient::Prepare() {
 
   GetPrepareRequest(request);
   SendPrepare(request, reply);
-  SetPrepareReply(reply);
+
+  bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
+
+  std::cout << "Get Majorith ? " << majority << std::endl;
 }
 
 void PaxosClient::Accept() {
@@ -67,7 +69,6 @@ void PaxosClient::Accept() {
 
   GetAcceptRequest(request);
   SendAccept(request, reply);
-  SetAcceptReply(reply);
 }
 
 void PaxosClient::Success() {
@@ -76,5 +77,4 @@ void PaxosClient::Success() {
 
   GetSuccessRequest(request);
   SendSuccess(request, reply);
-  SetSuccessReply(reply);
 }

@@ -1,9 +1,9 @@
 #include "paxos_server.h"
 
-int main()
+int main(int argc, char **argv)
 {
   std::shared_ptr<StateMachine> pState = std::make_shared<StateMachine>();
-  PaxosServer server("127.0.0.1:50051", pState);
+  PaxosServer server(argv[1], pState);
   server.Start();
   return 0;
 }

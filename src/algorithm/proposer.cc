@@ -27,12 +27,20 @@ void ProposerState::SetPeerAcceptedProposal(const PrepareReply &entry) {
   count_[instance]++;
 }
 
+uint32_t ProposerState::Count(uint32_t index) {
+  return count_[index];
+}
+
 Proposer::Proposer(std::shared_ptr<StateMachine> pState) : state_(pState) {  }
 
 Proposer::~Proposer() {  }
 
 void Proposer::Add(const std::string &value) {
 
+}
+
+uint32_t Proposer::Count(uint32_t index) {
+  return state_.Count(index);
 }
 
 void Proposer::SetPrepareReply(const PrepareReply &reply) {

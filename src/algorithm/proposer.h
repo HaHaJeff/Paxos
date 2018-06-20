@@ -63,6 +63,7 @@ class Proposer {
 //    void Start();
 //    void Stop();
 
+    uint32_t Count(uint32_t index);
     void SetPrepareReply(const PrepareReply &reply);
     void SetAcceptReply(const AcceptReply &reply);
     void SetSuccessReply(const SuccessReply &reply);
