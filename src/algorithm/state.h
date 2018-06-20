@@ -7,6 +7,7 @@ class StateMachine {
   public:
     StateMachine();
     bool AddToStateMachine(const LogEntry &entry);
+    uint32_t GetFirstUnchosenIndex() const;
     void Print();
 
   private:

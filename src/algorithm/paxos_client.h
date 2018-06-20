@@ -1,7 +1,6 @@
 #include "comdef.h"
 #include "proposer.h"
 
-#include <grpcpp/grpcpp.h>
 
 using grpc::Channel;
 using grpc::ClientContext;
@@ -14,7 +13,7 @@ using grpc::Status;
 //use grpc stub;
 class PaxosClient {
   public:
-    PaxosClient(std::shared_ptr<Channel> channel, StateMachine *pSM);
+    PaxosClient(std::shared_ptr<Channel> channel, std::shared_ptr<StateMachine> pState);
 
     void Prepare();
     void Accept();

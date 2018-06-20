@@ -27,6 +27,10 @@ bool StateMachine::AddToStateMachine(const LogEntry &entry) {
   return true;
 }
 
+uint32_t StateMachine::GetFirstUnchosenIndex() const {
+  return firstUnchosenIndex_;
+}
+
 bool StateMachine::Move() {
   if (!CanExecute()) {
     return false;
@@ -37,7 +41,6 @@ bool StateMachine::Move() {
   return true;
 }
 
-//bool StateMachine::Move
 
 void StateMachine::Print() {
   std::cout << "bitset: " << chosenFlag_.to_string() << std::endl;

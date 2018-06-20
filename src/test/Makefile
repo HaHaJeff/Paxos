@@ -16,7 +16,7 @@ PROTO_OUT = ./
 
 all: test_acceptor test_proposer test_state test_client test_server
 
-test_acceptor: test_acceptor.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
+test_acceptor: test_acceptor.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/state.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
 	@echo $^ "====>" $@
 	$(CXX) $^ $(LDFLAGS) -o $@
 
@@ -32,7 +32,7 @@ test_client: test_client.o $(OBJ_DIR)/paxos_client.o $(OBJ_DIR)/state.o $(OBJ_DI
 	@echo $^ "====>" $@
 	$(CXX) $^ $(LDFLAGS) -o $@
 
-test_server: test_server.o $(OBJ_DIR)/paxos_server.o $(OBJ_DIR)/paxos_service.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
+test_server: test_server.o $(OBJ_DIR)/paxos_server.o $(OBJ_DIR)/state.o $(OBJ_DIR)/paxos_service.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
 	@echo $^ "====>" $@
 	$(CXX) $^ $(LDFLAGS) -o $@
 #demo_server: demo.pb.o demo.grpc.pb.o demo_server.o

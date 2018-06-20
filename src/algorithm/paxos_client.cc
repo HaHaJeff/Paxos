@@ -1,7 +1,7 @@
 #include "paxos_client.h"
 
-PaxosClient::PaxosClient(std::shared_ptr<Channel> channel, StateMachine *pSM)
-  : stub_(Paxos::NewStub(channel)), pProposer_(new Proposer(pSM)) {  }
+PaxosClient::PaxosClient(std::shared_ptr<Channel> channel, std::shared_ptr<StateMachine> pState)
+  : stub_(Paxos::NewStub(channel)), pProposer_(new Proposer(pState)) {  }
 
 void PaxosClient::SendPrepare(const PrepareRequest &request, PrepareReply &reply) {
   std::cout << "rpc call OnPrepare" << std::endl;

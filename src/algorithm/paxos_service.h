@@ -10,7 +10,7 @@ using grpc::ServerContext;
 
 class PaxosService final : public Paxos::Service {
   public:
-    PaxosService();
+    PaxosService(std::shared_ptr<StateMachine> pState);
 
     Status OnPrepare(ServerContext *context, const PrepareRequest *request,
         PrepareReply *reply) override;

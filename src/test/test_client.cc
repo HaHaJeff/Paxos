@@ -2,10 +2,8 @@
 
 int main()
 {
-  StateMachine sm;
-  PaxosClient client(grpc::CreateChannel("127.0.0.1:50051", grpc::InsecureChannelCredentials()), &sm);
-  PrepareRequest request;
-  PrepareReply reply;
+  std::shared_ptr<StateMachine> pState = std::make_shared<StateMachine>();
+  PaxosClient client(grpc::CreateChannel("127.0.0.1:50051", grpc::InsecureChannelCredentials()), pState);
   client.Prepare();
   return 0;
 }

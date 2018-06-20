@@ -1,7 +1,7 @@
 #include "proposer.h"
 
-void ProposerState::AddToStateMachine(const ProposalEntry &entry) {
-  LogEntry log(firstUnchosenIndex_, entry);
+void ProposerState::AddToStateMachine(uint32_t index, const ProposalEntry &entry) {
+  LogEntry log(index, entry);
   pState_->AddToStateMachine(log);
 }
 
@@ -12,7 +12,6 @@ void ProposerState::GetAcceptRequest(AcceptRequest &request, const std::string &
   request.set_value(peerAcceptedProposal_[index].value().empty() ? value: peerAcceptedProposal_[index].value());
   //firstunchosenindex或许已经更新过了，因为可能已经AddToStateMachine其他proposal了
   request.set_firstunchosenindex(firstUnchosenIndex);
-
 }
 
 //set highest proposal
@@ -28,9 +27,13 @@ void ProposerState::SetPeerAcceptedProposal(const PrepareReply &entry) {
   count_[instance]++;
 }
 
-Proposer::Proposer(StateMachine *pState) : state_(pState) {  }
+Proposer::Proposer(std::shared_ptr<StateMachine> pState) : state_(pState) {  }
 
 Proposer::~Proposer() {  }
+
+void Proposer::Add(const std::string &value) {
+
+}
 
 void Proposer::SetPrepareReply(const PrepareReply &reply) {
   state_.SetPeerAcceptedProposal(reply);

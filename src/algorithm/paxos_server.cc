@@ -1,6 +1,7 @@
 #include "paxos_server.h"
 
-PaxosServer::PaxosServer(const std::string &address) : started_(false), address_(address) {  }
+PaxosServer::PaxosServer(const std::string &address, std::shared_ptr<StateMachine> pState) :
+  service_(pState), started_(false), address_(address) {  }
 
 PaxosServer::~PaxosServer() {
   if(started_) {

@@ -11,7 +11,7 @@ using grpc::Status;
 
 class PaxosServer {
   public:
-    PaxosServer(const std::string &address);
+    PaxosServer(const std::string &address, std::shared_ptr<StateMachine> pState);
     ~PaxosServer();
     void Start();
     void Stop();

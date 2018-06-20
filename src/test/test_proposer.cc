@@ -3,7 +3,8 @@
 
 int main()
 {
-  StateMachine sm;
-  Proposer p(&sm);
+  std::shared_ptr<StateMachine> pState = std::make_shared<StateMachine>();
+
+  Proposer p(pState);
   return 0;
 }

@@ -1,6 +1,6 @@
 #include "paxos_service.h"
 
-PaxosService::PaxosService() {
+PaxosService::PaxosService(std::shared_ptr<StateMachine> pState) : pAcceptor_(new Acceptor(pState)) {
 
 }
 
