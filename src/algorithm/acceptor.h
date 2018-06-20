@@ -27,6 +27,8 @@ class AcceptState {
     void UpdateChosenProposal(uint32_t proposal, uint32_t peerFirstUnchosenIndex);
     void AddToStateMachine(uint32_t index, const ProposalEntry &entry);
 
+    void Print();
+
   private:
     void UpdateEntry(uint32_t index, const ProposalEntry &proposal);
 
@@ -47,6 +49,8 @@ class Acceptor {
     void RecvPrepare(const PrepareRequest &request, PrepareReply &reply);
     void RecvAccept(const AcceptRequest &request, AcceptReply &reply);
     void RecvSuccess(const SuccessRequest &request, SuccessReply &reply);
+
+    void Print();
 
   private:
     AcceptState state_;

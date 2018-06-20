@@ -43,6 +43,7 @@ bool StateMachine::Move() {
 
 
 void StateMachine::Print() {
+  std::cout << "**********StateMachine*********" << std::endl;
   std::cout << "bitset: " << chosenFlag_.to_string() << std::endl;
   std::cout << "firstUnchosenIndex: " << firstUnchosenIndex_ << std::endl;
   std::cout << "firstIndexInThisWindow: " << firstIndexInThisWindow_ << std::endl;
@@ -51,6 +52,7 @@ void StateMachine::Print() {
     std::cout << "log index: " << iter.first << "\t" <<
       "log value: " << iter.second.second << std::endl;
   }
+  std::cout << "********************************" << std::endl;
 }
 
 void StateMachine::UpdateFirstUnchosenIndex() {

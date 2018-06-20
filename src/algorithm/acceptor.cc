@@ -63,6 +63,22 @@ void AcceptState::AddToStateMachine(uint32_t index, const ProposalEntry &entry) 
   pState_->AddToStateMachine(log);
 }
 
+void AcceptState::Print() {
+  std::cout << "********AcceptState********" << std::endl;
+
+  std::for_each(minProposal_.begin(), minProposal_.end(), [&](std::pair<uint32_t, uint32_t> p) {
+      std::cout << "instance: " << p.first << "\t" << "minProposal: " << p.second << std::endl;
+      });
+
+  std::for_each(acceptedProposal_.begin(), acceptedProposal_.end(), [&](std::pair<uint32_t, ProposalEntry> p) {
+      std::cout << "instance: " << p.first << "\t" << "proposal id: " << p.second.first << " value: " << p.second.second << std::endl;
+      });
+
+  std::cout << "***************************" << std::endl;
+
+  pState_->Print();
+}
+
 Acceptor::Acceptor(std::shared_ptr<StateMachine> pState) : state_(pState) {  }
 
 Acceptor::~Acceptor() {  }
@@ -82,7 +98,7 @@ void Acceptor::RecvPrepare(const PrepareRequest &request, PrepareReply &reply) {
   reply.set_nomoreaccepted(false);
 
   //Accept
-  if (proposal > minProposal) {
+  if (proposal >= minProposal) {
 
     reply.set_proposalid(proposal);
 
@@ -110,7 +126,7 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
   reply.set_instanceid(index);
   reply.set_nodeid(1);
 
-  if (proposal > minProposal) {
+  if (proposal >= minProposal) {
     reply.set_proposalid(proposal);
 
     state_.SetMinProposal(index, proposal);
@@ -129,4 +145,8 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
 
 void Acceptor::RecvSuccess(const SuccessRequest &request, SuccessReply &reply) {
 
+}
+
+void Acceptor::Print() {
+  state_.Print();
 }

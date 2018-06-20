@@ -51,7 +51,7 @@ void PaxosClient::SendSuccess(const SuccessRequest &request, SuccessReply &reply
       });
 }
 
-void PaxosClient::Prepare() {
+bool PaxosClient::Prepare() {
   PrepareRequest request;
   PrepareReply reply;
 
@@ -60,21 +60,27 @@ void PaxosClient::Prepare() {
 
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
 
-  std::cout << "Get Majorith ? " << majority << std::endl;
+  return majority;
 }
 
-void PaxosClient::Accept() {
+bool PaxosClient::Accept() {
   AcceptRequest request;
   AcceptReply   reply;
 
   GetAcceptRequest(request);
   SendAccept(request, reply);
+
+  bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
+
+  return majority;
 }
 
-void PaxosClient::Success() {
+bool PaxosClient::Success() {
   SuccessRequest request;
   SuccessReply   reply;
 
   GetSuccessRequest(request);
   SendSuccess(request, reply);
+
+  return false;
 }
