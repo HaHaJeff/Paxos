@@ -13,11 +13,13 @@ using grpc::Status;
 //use grpc stub;
 class PaxosClient {
   public:
-    PaxosClient(std::shared_ptr<Channel> channel, std::shared_ptr<StateMachine> pState);
+    PaxosClient(std::shared_ptr<StateMachine> pState);
 
     void Prepare();
     void Accept();
     void Success();
+
+    void AddPeer(const std::pair<uint32_t, std::string> &peer);
 
     //Get means get a request from proposer
     //Set means set a reply from peer acceptor to proposer, update proposer state
@@ -47,7 +49,11 @@ class PaxosClient {
     void SendSuccess(const SuccessRequest &request, SuccessReply &reply);
 
   private:
-    std::unique_ptr<Paxos::Stub> stub_;
+
+    //uint32_t: NodeID, std::string: address
+    std::map<uint32_t, std::string> peers_;
+    // uint32_t: NodeID unique_ptr: Stub
+    std::map<uint32_t, std::shared_ptr<Paxos::Stub> > stub_;
     std::unique_ptr<Proposer> pProposer_;
 
 };
