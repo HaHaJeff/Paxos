@@ -36,9 +36,10 @@ class ProposerState {
     void SetNotPrepared() { prepared_ = false; }
 
     void AddToStateMachine(uint32_t index, const ProposalEntry &entry);
-    void GetAcceptRequest(AcceptRequest &request, const std::string &value, uint32_t index, uint32_t firstUnchosenIndex);
+    void GetAcceptRequest(AcceptRequest &request, uint32_t index, uint32_t firstUnchosenIndex);
 
     uint32_t Count(uint32_t index);
+    void SetChosenProposal(uint32_t index, const ProposalEntry &entry);
 
   private:
     uint32_t firstUnchosenIndex_;
@@ -50,6 +51,19 @@ class ProposerState {
     std::map<uint32_t, PrepareReply> peerAcceptedProposal_;
     std::map<uint32_t, uint32_t> count_;
     std::shared_ptr<StateMachine> pState_;
+};
+
+typedef enum {
+  TODO,
+  PENDING,
+  FINISHED
+} STATUS;
+
+struct Value{
+  Value(uint32_t id, const std::string &v, STATUS s) : instanceid(id), value(v), status(s) {  }
+  uint32_t instanceid;
+  std::string value;
+  STATUS status;
 };
 
 class Proposer {
@@ -76,7 +90,7 @@ class Proposer {
     ProposerState state_;
     //TODO: maybe prealloc instanceid may change, so when AddToMachine
     //is executed, we need to check instanceid whether is being chosen?
-    std::map<uint32_t, std::string> toBeChosenValue_;
+    std::list<Value> toBeChosenValue_;
 };
 
 #endif

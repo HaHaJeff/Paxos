@@ -66,13 +66,17 @@ void AcceptState::AddToStateMachine(uint32_t index, const ProposalEntry &entry) 
 void AcceptState::Print() {
   std::cout << "********AcceptState********" << std::endl;
 
+  std::cout << "MinProposal: ";
   std::for_each(minProposal_.begin(), minProposal_.end(), [&](std::pair<uint32_t, uint32_t> p) {
       std::cout << "instance: " << p.first << "\t" << "minProposal: " << p.second << std::endl;
       });
+  std::cout << std::endl;
 
+  std::cout << "AcceptedProposal: ";
   std::for_each(acceptedProposal_.begin(), acceptedProposal_.end(), [&](std::pair<uint32_t, ProposalEntry> p) {
       std::cout << "instance: " << p.first << "\t" << "proposal id: " << p.second.first << " value: " << p.second.second << std::endl;
       });
+  std::cout << std::endl;
 
   std::cout << "***************************" << std::endl;
 
