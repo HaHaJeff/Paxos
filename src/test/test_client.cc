@@ -11,6 +11,9 @@ int main()
   client.AddPeer(p1);
   client.AddPeer(p2);
 
+  client.AddValue("get k");
+  client.AddValue("modify k");
+
   while (!client.Prepare() );
 
   client.Accept();

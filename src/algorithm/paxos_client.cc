@@ -17,6 +17,10 @@ void PaxosClient::AddPeer(const std::pair<uint32_t, std::string> &peer) {
   stub_.insert(p);
 }
 
+void PaxosClient::AddValue(const std::string &value) {
+  pProposer_->AddValue(value);
+}
+
 void PaxosClient::SendPrepare(const PrepareRequest &request, PrepareReply &reply) {
   std::cout << "rpc call OnPrepare" << std::endl;
 
@@ -58,6 +62,7 @@ bool PaxosClient::Prepare() {
   GetPrepareRequest(request);
   SendPrepare(request, reply);
 
+  pProposer_->Print();
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
 
   return majority;
@@ -70,6 +75,7 @@ bool PaxosClient::Accept() {
   GetAcceptRequest(request);
   SendAccept(request, reply);
 
+  pProposer_->Print();
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
 
   return majority;

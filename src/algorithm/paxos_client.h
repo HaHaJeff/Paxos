@@ -20,6 +20,7 @@ class PaxosClient {
     bool Success();
 
     void AddPeer(const std::pair<uint32_t, std::string> &peer);
+    void AddValue(const std::string &value);
 
     //Get means get a request from proposer
     //Set means set a reply from peer acceptor to proposer, update proposer state

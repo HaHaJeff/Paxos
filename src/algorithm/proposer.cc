@@ -35,12 +35,31 @@ void ProposerState::SetChosenProposal(uint32_t index, const ProposalEntry &entry
   AddToStateMachine(index, entry);
 }
 
+void ProposerState::Print() {
+  std::cout << "*************ProposerState***********" << std::endl;
+
+  std::cout << "MaxRound: " << maxRound_ << std::endl;
+
+  std::for_each(peerAcceptedProposal_.begin(), peerAcceptedProposal_.end(), [](auto &peer){
+      std::cout << "Instanceid: " << peer.first << std::endl;
+      std::cout << "peer proposal id:" << peer.second.proposalid() << " value: " << peer.second.value() << std::endl;
+      });
+
+  std::for_each(count_.begin(), count_.end(), [](auto &p){
+      std::cout << "Instanceid: " << p.first << " count: " << p.second << std::endl;
+      });
+
+  std::cout << "*************************************" << std::endl;
+
+  pState_->Print();
+}
+
 Proposer::Proposer(std::shared_ptr<StateMachine> pState) : state_(pState) {  }
 
 Proposer::~Proposer() {  }
 
-void Proposer::Add(const std::string &value) {
-  Value v(0, value, TODO);
+void Proposer::AddValue(const std::string &value) {
+  Value v(-1, value, TODO);
   toBeChosenValue_.push_back(v);
 }
 
@@ -55,12 +74,13 @@ void Proposer::SetPrepareReply(const PrepareReply &reply) {
 void Proposer::SetAcceptReply(const AcceptReply &reply) {
 
   std::string value;
-  std::for_each(toBeChosenValue_.begin(), toBeChosenValue_.end(), [reply, &value](Value &v){
+  std::find_if(toBeChosenValue_.begin(), toBeChosenValue_.end(), [reply, &value](Value &v) -> bool{
       if (reply.instanceid() == v.instanceid && v.status == PENDING) {
       v.status = FINISHED;
       value = v.value;
-      return;
+      return true;
       }
+      return false;
   });
   ProposalEntry entry(reply.proposalid(), value);
   state_.SetChosenProposal(reply.instanceid(), entry);
@@ -83,13 +103,14 @@ void Proposer::GetAcceptRequest(AcceptRequest &request) {
 
   if (request.value().empty()) {
     std::string value;
-    std::for_each(toBeChosenValue_.begin(), toBeChosenValue_.end(), [request, &value](Value &v){
+    std::find_if(toBeChosenValue_.begin(), toBeChosenValue_.end(), [request, &value](Value &v) -> bool{
         if (v.status == TODO) {
         v.status = PENDING;
         v.instanceid = request.instanceid();
         value = v.value;
-        return;
+        return true;
         }
+        return false;
         });
     request.set_value(value);
   }
@@ -97,4 +118,15 @@ void Proposer::GetAcceptRequest(AcceptRequest &request) {
 
 void Proposer::GetSuccessRequest(SuccessRequest &request) {
 
+}
+
+void Proposer::Print() {
+  std::cout << "***********Proposer***********" << std::endl;
+
+  std::for_each(toBeChosenValue_.begin(), toBeChosenValue_.end(), [](auto &entry){
+      std::cout << "Instanceid: " << entry.instanceid << " Status: " << entry.status << " value: " << entry.value << std::endl;
+      });
+
+  std::cout << "******************************" << std::endl;
+  state_.Print();
 }

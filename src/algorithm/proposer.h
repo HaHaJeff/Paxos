@@ -41,8 +41,10 @@ class ProposerState {
     uint32_t Count(uint32_t index);
     void SetChosenProposal(uint32_t index, const ProposalEntry &entry);
 
+    void Print();
+
   private:
-    uint32_t firstUnchosenIndex_;
+//    uint32_t firstUnchosenIndex_;
     uint32_t maxRound_;
 //   uint32_t nextIndex_;
     uint32_t index_;
@@ -72,7 +74,7 @@ class Proposer {
     ~Proposer();
 
     //仅仅只是为value分配一个可用的instance_id
-    void Add(const std::string &value);
+    void AddValue(const std::string &value);
 
 //    void Start();
 //    void Stop();
@@ -85,6 +87,8 @@ class Proposer {
     void GetPrepareRequest(PrepareRequest &request);
     void GetAcceptRequest(AcceptRequest &request);
     void GetSuccessRequest(SuccessRequest &request);
+
+    void Print();
 
   private:
     ProposerState state_;

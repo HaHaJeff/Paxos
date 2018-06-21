@@ -67,13 +67,13 @@ void AcceptState::Print() {
   std::cout << "********AcceptState********" << std::endl;
 
   std::cout << "MinProposal: ";
-  std::for_each(minProposal_.begin(), minProposal_.end(), [&](std::pair<uint32_t, uint32_t> p) {
+  std::for_each(minProposal_.begin(), minProposal_.end(), [](auto &p) {
       std::cout << "instance: " << p.first << "\t" << "minProposal: " << p.second << std::endl;
       });
   std::cout << std::endl;
 
   std::cout << "AcceptedProposal: ";
-  std::for_each(acceptedProposal_.begin(), acceptedProposal_.end(), [&](std::pair<uint32_t, ProposalEntry> p) {
+  std::for_each(acceptedProposal_.begin(), acceptedProposal_.end(), [](auto &p) {
       std::cout << "instance: " << p.first << "\t" << "proposal id: " << p.second.first << " value: " << p.second.second << std::endl;
       });
   std::cout << std::endl;

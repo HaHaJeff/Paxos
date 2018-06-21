@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS += -g -std=c++11
+CXXFLAGS += -g -std=c++14
 LDFLAGS += -L /usr/local/lib `pkg-config --libs protobuf grpc++ grpc`
 
 
