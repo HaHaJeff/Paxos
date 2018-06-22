@@ -15,9 +15,9 @@ class PaxosClient {
   public:
     PaxosClient(std::shared_ptr<StateMachine> pState);
 
-    bool Prepare();
-    bool Accept();
-    bool Success();
+    bool Prepare(uint32_t &instance);
+    bool Accept(uint32_t &instance, uint32_t &peer);
+    bool Success(uint32_t &instance, uint32_t &peer);
 
     void AddPeer(const std::pair<uint32_t, std::string> &peer);
     void AddValue(const std::string &value);

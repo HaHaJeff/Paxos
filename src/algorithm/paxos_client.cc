@@ -55,7 +55,7 @@ void PaxosClient::SendSuccess(const SuccessRequest &request, SuccessReply &reply
       });
 }
 
-bool PaxosClient::Prepare() {
+bool PaxosClient::Prepare(uint32_t &instance) {
   PrepareRequest request;
   PrepareReply reply;
 
@@ -64,12 +64,13 @@ bool PaxosClient::Prepare() {
 
   pProposer_->Print();
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
+  instance = reply.instanceid();
 
   ResetCount(reply.instanceid());
   return majority;
 }
 
-bool PaxosClient::Accept() {
+bool PaxosClient::Accept(uint32_t &instance, uint32_t &peer) {
   AcceptRequest request;
   AcceptReply   reply;
 
@@ -77,6 +78,8 @@ bool PaxosClient::Accept() {
   SendAccept(request, reply);
 
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
+  instance = reply.instanceid();
+  peer = reply.firstunchosenindex();
 
   if (majority) {
     SetChosenProposal(reply.instanceid());
@@ -88,7 +91,7 @@ bool PaxosClient::Accept() {
   return majority;
 }
 
-bool PaxosClient::Success() {
+bool PaxosClient::Success(uint32_t &instance, uint32_t &peer) {
   SuccessRequest request;
   SuccessReply   reply;
 

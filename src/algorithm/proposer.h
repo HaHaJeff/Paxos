@@ -4,7 +4,6 @@
 #ifndef PROPOSER_H
 #define PROPOSER_H
 
-
 //TODO: need mutex?
 //TODO: persist
 
@@ -20,18 +19,15 @@ class ProposerState {
     void SetNodeID(uint32_t nodeID) { nodeID_ = nodeID; }
     uint32_t GetNodeID() const { return nodeID_; }
 
-//    void SetNextIndex(uint32_t index) { nextIndex_ = index; }
-//    uint32_t GetNextIndex() const { return nextIndex_; }
-
-//    void SetFirstUnchosenIndex(uint32_t index) { firstUnchosenIndex_ = index; }
     uint32_t GetFirstUnchosenIndex() const { return pState_->GetFirstUnchosenIndex(); }
+    uint32_t GetPeerAcceptedProposal(uint32_t instance) { return peerAcceptedProposal_[instance].proposalid(); }
+    //uint32_t GetPeerFirstUnchosenIndex(uint32_t instance) { return peerAcceptedProposal_[instance].firstunchosenindex(); }
+    std::string GetInstanceValue(uint32_t instance) { return pState_->GetInstanceValue(instance); }
 
     //set highest proposal
     void SetPeerAcceptedProposal(const PrepareReply &entry);
 
     void SetAcceptReply(const AcceptReply &reply);
-
-    uint32_t GetPeerAcceptedProposal(uint32_t instance) { return peerAcceptedProposal_[instance].proposalid(); }
 
     bool IsPrepared() { return prepared_; }
     void SetPrepared() { prepared_ = true; }
@@ -47,9 +43,7 @@ class ProposerState {
     void Print();
 
   private:
-//    uint32_t firstUnchosenIndex_;
     uint32_t maxRound_;
-//   uint32_t nextIndex_;
     uint32_t index_;
     uint32_t nodeID_;        //暂时不用该属性
     bool prepared_;
@@ -78,9 +72,6 @@ class Proposer {
 
     //仅仅只是为value分配一个可用的instance_id
     void AddValue(const std::string &value);
-
-//    void Start();
-//    void Stop();
 
     uint32_t Count(uint32_t index);
     void SetPrepareReply(const PrepareReply &reply);

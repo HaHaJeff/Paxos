@@ -148,7 +148,9 @@ void Proposer::GetAcceptRequest(AcceptRequest &request) {
 }
 
 void Proposer::GetSuccessRequest(SuccessRequest &request) {
-
+  uint32_t instanceid = request.instanceid();
+  std::string value = state_.GetInstanceValue(instanceid);
+  request.set_value(value);
 }
 
 void Proposer::ResetCount(uint32_t index) {

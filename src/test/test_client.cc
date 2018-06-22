@@ -27,9 +27,13 @@ int main()
   client.AddValue("get k");
   client.AddValue("modify k");
 
-  while (!client.Prepare() );
+  uint32_t instance, peer;
 
-  while (!client.Accept() );
+  if (client.Prepare(instance)) {
+    if (client.Accept(instance, peer)) {
+      client.Success(instance, peer);
+    }
+  }
 
   return 0;
 }

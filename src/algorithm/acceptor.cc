@@ -137,10 +137,11 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
   int minProposal = state_.GetMinProposal(index);
   std::string value = request.value();
   int peerFirstUnchosenIndex = request.firstunchosenindex();
-
+  int firstUnchosenIndex = state_.GetFirstUnchosenIndex();
 
   reply.set_instanceid(index);
   reply.set_nodeid(1);
+  reply.set_firstunchosenindex(firstUnchosenIndex);
 
   if (proposal >= minProposal) {
     reply.set_proposalid(proposal);
@@ -156,6 +157,9 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
   } else {
     reply.set_proposalid(minProposal);
   }
+
+  //TODO: Accept firstunchosenindex < peerFirstUnchosenIndex
+  //std::for_each();
 
 }
 

@@ -32,6 +32,10 @@ uint32_t StateMachine::GetFirstUnchosenIndex() const {
   return firstUnchosenIndex_;
 }
 
+std::string StateMachine::GetInstanceValue(uint32_t instance) {
+  return chosenProposal_[instance].second;
+}
+
 bool StateMachine::Move() {
   if (!CanExecute()) {
     return false;

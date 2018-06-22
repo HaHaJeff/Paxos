@@ -8,6 +8,8 @@ class StateMachine {
     StateMachine();
     bool AddToStateMachine(const LogEntry &entry);
     uint32_t GetFirstUnchosenIndex() const;
+    std::string GetInstanceValue(uint32_t instance);
+
     void Print();
 
   private:

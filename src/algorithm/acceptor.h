@@ -17,6 +17,10 @@ class AcceptState {
     uint32_t GetLastLogIndex() const {
       return lastLogIndex_;
     }
+    uint32_t GetFirstUnchosenIndex() const {
+      return pState_->GetFirstUnchosenIndex();
+    }
+
     void SetMinProposal(uint32_t index, uint32_t proposal);
     uint32_t GetMinProposal(uint32_t index_);
 
