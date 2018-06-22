@@ -45,6 +45,14 @@ class PaxosClient {
       pProposer_->SetAcceptReply(reply);
     }
 
+    void SetChosenProposal(uint32_t index) {
+      pProposer_->SetChosenProposal(index);
+    }
+
+    void ResetCount(uint32_t index) {
+      pProposer_->ResetCount(index);
+    }
+
     void SendPrepare(const PrepareRequest &request, PrepareReply &reply);
     void SendAccept(const AcceptRequest &request, AcceptReply &reply);
     void SendSuccess(const SuccessRequest &request, SuccessReply &reply);

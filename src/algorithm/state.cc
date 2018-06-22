@@ -7,10 +7,11 @@ StateMachine::StateMachine() :
   firstUnchosenIndex_(0), chosenFlag_(0) {  }
 
 bool StateMachine::AddToStateMachine(const LogEntry &entry) {
+  //Double check
   if (window_ == 0) {
     return false;
   }
-  std::lock_guard<std::mutex> lck(mtx_);
+  std::lock_guard<std::mutex> lock(mutex_);
   if (window_ == 0) {
     return false;
   }

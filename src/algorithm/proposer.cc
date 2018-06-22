@@ -27,8 +27,22 @@ void ProposerState::SetPeerAcceptedProposal(const PrepareReply &entry) {
   count_[instance]++;
 }
 
+void ProposerState::SetAcceptReply(const AcceptReply& reply) {
+  uint32_t proposalid = GetPeerAcceptedProposal(reply.instanceid());
+
+  if (proposalid < proposalid ) {
+    return;
+  } else {
+    count_[reply.instanceid()] += 1;
+  }
+}
+
 uint32_t ProposerState::Count(uint32_t index) {
   return count_[index];
+}
+
+void ProposerState::ResetCount(uint32_t index) {
+  count_[index] = 0;
 }
 
 void ProposerState::SetChosenProposal(uint32_t index, const ProposalEntry &entry) {
@@ -53,7 +67,6 @@ void ProposerState::Print() {
 
   pState_->Print();
 }
-
 Proposer::Proposer(std::shared_ptr<StateMachine> pState) : state_(pState) {  }
 
 Proposer::~Proposer() {  }
@@ -73,6 +86,8 @@ void Proposer::SetPrepareReply(const PrepareReply &reply) {
 
 void Proposer::SetAcceptReply(const AcceptReply &reply) {
 
+  state_.SetAcceptReply(reply);
+  /*
   std::string value;
   std::find_if(toBeChosenValue_.begin(), toBeChosenValue_.end(), [reply, &value](Value &v) -> bool{
       if (reply.instanceid() == v.instanceid && v.status == PENDING) {
@@ -84,6 +99,22 @@ void Proposer::SetAcceptReply(const AcceptReply &reply) {
   });
   ProposalEntry entry(reply.proposalid(), value);
   state_.SetChosenProposal(reply.instanceid(), entry);
+  std::cout << "chosen proposal: " << value << std::endl;
+  */
+}
+
+void Proposer::SetChosenProposal(uint32_t index) {
+  std::string value;
+  std::find_if(toBeChosenValue_.begin(), toBeChosenValue_.end(), [index, &value](Value &v) -> bool{
+      if (index == v.instanceid && v.status == PENDING) {
+      v.status = FINISHED;
+      value = v.value;
+      return true;
+      }
+      return false;
+  });
+  ProposalEntry entry(index, value);
+  state_.SetChosenProposal(index, entry);
 }
 
 void Proposer::SetSuccessReply(const SuccessReply &reply) {
@@ -118,6 +149,10 @@ void Proposer::GetAcceptRequest(AcceptRequest &request) {
 
 void Proposer::GetSuccessRequest(SuccessRequest &request) {
 
+}
+
+void Proposer::ResetCount(uint32_t index) {
+  state_.ResetCount(index);
 }
 
 void Proposer::Print() {

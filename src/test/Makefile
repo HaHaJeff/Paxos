@@ -28,7 +28,7 @@ test_state: test_state.o $(OBJ_DIR)/state.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.g
 	@echo $^ "====>" $@
 	$(CXX) $^ $(LDFLAGS) -o $@
 : 
-test_client: test_client.o $(OBJ_DIR)/paxos_client.o $(OBJ_DIR)/state.o $(OBJ_DIR)/proposer.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
+test_client: test_client.o $(OBJ_DIR)/paxos_client.o $(OBJ_DIR)/paxos_server.o $(OBJ_DIR)/paxos_service.o $(OBJ_DIR)/acceptor.o $(OBJ_DIR)/state.o $(OBJ_DIR)/proposer.o $(OBJ_DIR)/rpc.pb.o $(OBJ_DIR)/rpc.grpc.pb.o
 	@echo $^ "====>" $@
 	$(CXX) $^ $(LDFLAGS) -o $@
 

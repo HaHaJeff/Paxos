@@ -65,6 +65,7 @@ bool PaxosClient::Prepare() {
   pProposer_->Print();
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
 
+  ResetCount(reply.instanceid());
   return majority;
 }
 
@@ -75,9 +76,15 @@ bool PaxosClient::Accept() {
   GetAcceptRequest(request);
   SendAccept(request, reply);
 
-  pProposer_->Print();
   bool majority = pProposer_->Count(reply.instanceid()) > peers_.size()/2 ? true : false;
 
+  if (majority) {
+    SetChosenProposal(reply.instanceid());
+  }
+
+  pProposer_->Print();
+
+  ResetCount(reply.instanceid());
   return majority;
 }
 

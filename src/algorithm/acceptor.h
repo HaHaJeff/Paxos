@@ -18,7 +18,7 @@ class AcceptState {
       return lastLogIndex_;
     }
     void SetMinProposal(uint32_t index, uint32_t proposal);
-    uint32_t GetMinProposal(uint32_t index_) const;
+    uint32_t GetMinProposal(uint32_t index_);
 
     bool GetLogProposal(uint32_t index, ProposalEntry &proposal);
     bool GetLogValue(uint32_t index, std::string &value);
@@ -38,6 +38,8 @@ class AcceptState {
     std::map<uint32_t, uint32_t> minProposal_;
     std::map<uint32_t, ProposalEntry> acceptedProposal_;
     std::shared_ptr<StateMachine> pState_;
+
+    std::mutex mutex_;
 };
 
 class Acceptor {

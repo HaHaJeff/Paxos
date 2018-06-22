@@ -29,7 +29,9 @@ class ProposerState {
     //set highest proposal
     void SetPeerAcceptedProposal(const PrepareReply &entry);
 
-    PrepareReply GetPeerAcceptedProposal(uint32_t instance) { return peerAcceptedProposal_[instance]; }
+    void SetAcceptReply(const AcceptReply &reply);
+
+    uint32_t GetPeerAcceptedProposal(uint32_t instance) { return peerAcceptedProposal_[instance].proposalid(); }
 
     bool IsPrepared() { return prepared_; }
     void SetPrepared() { prepared_ = true; }
@@ -39,6 +41,7 @@ class ProposerState {
     void GetAcceptRequest(AcceptRequest &request, uint32_t index, uint32_t firstUnchosenIndex);
 
     uint32_t Count(uint32_t index);
+    void ResetCount(uint32_t index);
     void SetChosenProposal(uint32_t index, const ProposalEntry &entry);
 
     void Print();
@@ -87,6 +90,10 @@ class Proposer {
     void GetPrepareRequest(PrepareRequest &request);
     void GetAcceptRequest(AcceptRequest &request);
     void GetSuccessRequest(SuccessRequest &request);
+
+    void SetChosenProposal(uint32_t index);
+
+    void ResetCount(uint32_t index);
 
     void Print();
 

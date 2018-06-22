@@ -28,7 +28,7 @@ class StateMachine {
     std::bitset<factor_> chosenFlag_;
     std::map<uint32_t, ProposalEntry> chosenProposal_;
 
-    std::mutex mtx_;
+    std::mutex mutex_;
 };
 
 #endif
