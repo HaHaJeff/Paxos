@@ -22,6 +22,16 @@ bool AcceptState::GetLogValue(uint32_t index, std::string &value) {
   return true;
 }
 
+uint32_t AcceptState::GetLogProposalID(uint32_t index) {
+  ProposalEntry proposal;
+
+  if (GetLogProposal(index, proposal)) {
+    return proposal.first;
+  } else {
+    return -1;
+  }
+}
+
 void AcceptState::SetMinProposal(uint32_t index, uint32_t proposal) {
   std::lock_guard<std::mutex> lock(mutex_);
   std::map<uint32_t, uint32_t>::iterator iter = minProposal_.lower_bound(index);
@@ -58,6 +68,9 @@ void AcceptState::UpdateChosenProposal(uint32_t proposal, uint32_t peerFirstUnch
       AddToStateMachine(i, entry);
     }
   }
+
+  //FIXME: update firstUnchosenIndex_
+  firstUnchosenIndex_ = GetFirstUnchosenIndex();
 }
 
 void AcceptState::UpdateEntry(uint32_t index, const ProposalEntry &proposal) {
@@ -140,7 +153,7 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
   int firstUnchosenIndex = state_.GetFirstUnchosenIndex();
 
   reply.set_instanceid(index);
-  reply.set_nodeid(1);
+
   reply.set_firstunchosenindex(firstUnchosenIndex);
 
   if (proposal >= minProposal) {
@@ -157,9 +170,6 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
   } else {
     reply.set_proposalid(minProposal);
   }
-
-  //TODO: Accept firstunchosenindex < peerFirstUnchosenIndex
-  //std::for_each();
 
 }
 

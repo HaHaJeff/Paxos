@@ -70,6 +70,7 @@ bool PaxosClient::Prepare(uint32_t &instance) {
   return majority;
 }
 
+//@parm peer means peerFirstUnchosenIndex
 bool PaxosClient::Accept(uint32_t &instance, uint32_t &peer) {
   AcceptRequest request;
   AcceptReply   reply;
@@ -91,6 +92,7 @@ bool PaxosClient::Accept(uint32_t &instance, uint32_t &peer) {
   return majority;
 }
 
+//@parm peer means peerFirstUnchosenIndex
 bool PaxosClient::Success(uint32_t &instance, uint32_t &peer) {
   SuccessRequest request;
   SuccessReply   reply;
