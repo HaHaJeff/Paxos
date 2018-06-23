@@ -73,6 +73,8 @@ class Proposer {
     //仅仅只是为value分配一个可用的instance_id
     void AddValue(const std::string &value);
 
+    uint32_t GetFirstUnchosenIndex();
+
     uint32_t Count(uint32_t index);
     void SetPrepareReply(const PrepareReply &reply);
     void SetAcceptReply(const AcceptReply &reply);

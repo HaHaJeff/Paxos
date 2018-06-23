@@ -94,11 +94,18 @@ bool PaxosClient::Accept(uint32_t &instance, uint32_t &peer) {
 
 //@parm peer means peerFirstUnchosenIndex
 bool PaxosClient::Success(uint32_t &instance, uint32_t &peer) {
-  SuccessRequest request;
-  SuccessReply   reply;
+  uint32_t firstUnchosenIndex = pProposer_->GetFirstUnchosenIndex();
 
-  GetSuccessRequest(request);
-  SendSuccess(request, reply);
+  while (peer <  firstUnchosenIndex) {
+    SuccessRequest request;
+    SuccessReply   reply;
+
+    request.set_firstunchosenindex(peer);
+    GetSuccessRequest(request);
+    SendSuccess(request, reply);
+
+    peer = reply.firstunchosenindex();
+  }
 
   return false;
 }

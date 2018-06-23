@@ -118,7 +118,7 @@ void Proposer::SetChosenProposal(uint32_t index) {
 }
 
 void Proposer::SetSuccessReply(const SuccessReply &reply) {
-
+  //DO NOTHING
 }
 
 void Proposer::GetPrepareRequest(PrepareRequest &request) {
@@ -148,8 +148,8 @@ void Proposer::GetAcceptRequest(AcceptRequest &request) {
 }
 
 void Proposer::GetSuccessRequest(SuccessRequest &request) {
-  uint32_t instanceid = request.instanceid();
-  std::string value = state_.GetInstanceValue(instanceid);
+  uint32_t peerFirstUnchosenIndex = request.firstunchosenindex();
+  std::string value = state_.GetInstanceValue(peerFirstUnchosenIndex);
   request.set_value(value);
 }
 
@@ -166,4 +166,8 @@ void Proposer::Print() {
 
   std::cout << "******************************" << std::endl;
   state_.Print();
+}
+
+uint32_t Proposer::GetFirstUnchosenIndex() {
+  return state_.GetFirstUnchosenIndex();
 }

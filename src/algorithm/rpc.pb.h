@@ -683,11 +683,11 @@ class SuccessRequest : public ::google::protobuf::Message /* @@protoc_insertion_
   ::std::string* release_value();
   void set_allocated_value(::std::string* value);
 
-  // uint64 InstanceID = 1;
-  void clear_instanceid();
-  static const int kInstanceIDFieldNumber = 1;
-  ::google::protobuf::uint64 instanceid() const;
-  void set_instanceid(::google::protobuf::uint64 value);
+  // uint64 FirstUnchosenIndex = 1;
+  void clear_firstunchosenindex();
+  static const int kFirstUnchosenIndexFieldNumber = 1;
+  ::google::protobuf::uint64 firstunchosenindex() const;
+  void set_firstunchosenindex(::google::protobuf::uint64 value);
 
   // uint64 NodeID = 2;
   void clear_nodeid();
@@ -700,7 +700,7 @@ class SuccessRequest : public ::google::protobuf::Message /* @@protoc_insertion_
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr value_;
-  ::google::protobuf::uint64 instanceid_;
+  ::google::protobuf::uint64 firstunchosenindex_;
   ::google::protobuf::uint64 nodeid_;
   mutable int _cached_size_;
   friend struct ::protobuf_rpc_2eproto::TableStruct;
@@ -1155,18 +1155,18 @@ inline void AcceptReply::set_firstunchosenindex(::google::protobuf::uint64 value
 
 // SuccessRequest
 
-// uint64 InstanceID = 1;
-inline void SuccessRequest::clear_instanceid() {
-  instanceid_ = GOOGLE_ULONGLONG(0);
+// uint64 FirstUnchosenIndex = 1;
+inline void SuccessRequest::clear_firstunchosenindex() {
+  firstunchosenindex_ = GOOGLE_ULONGLONG(0);
 }
-inline ::google::protobuf::uint64 SuccessRequest::instanceid() const {
-  // @@protoc_insertion_point(field_get:SuccessRequest.InstanceID)
-  return instanceid_;
+inline ::google::protobuf::uint64 SuccessRequest::firstunchosenindex() const {
+  // @@protoc_insertion_point(field_get:SuccessRequest.FirstUnchosenIndex)
+  return firstunchosenindex_;
 }
-inline void SuccessRequest::set_instanceid(::google::protobuf::uint64 value) {
+inline void SuccessRequest::set_firstunchosenindex(::google::protobuf::uint64 value) {
   
-  instanceid_ = value;
-  // @@protoc_insertion_point(field_set:SuccessRequest.InstanceID)
+  firstunchosenindex_ = value;
+  // @@protoc_insertion_point(field_set:SuccessRequest.FirstUnchosenIndex)
 }
 
 // uint64 NodeID = 2;

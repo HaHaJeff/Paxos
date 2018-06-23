@@ -221,7 +221,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SuccessRequest, instanceid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SuccessRequest, firstunchosenindex_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SuccessRequest, nodeid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::SuccessRequest, value_),
   ~0u,  // no _has_bits_
@@ -282,17 +282,17 @@ void AddDescriptorsImpl() {
       " \001(\014\022\032\n\022FirstUnchosenIndex\030\005 \001(\004\"a\n\013Acce"
       "ptReply\022\022\n\nInstanceID\030\001 \001(\004\022\016\n\006NodeID\030\003 "
       "\001(\004\022\022\n\nProposalID\030\004 \001(\004\022\032\n\022FirstUnchosen"
-      "Index\030\005 \001(\004\"C\n\016SuccessRequest\022\022\n\nInstanc"
-      "eID\030\001 \001(\004\022\016\n\006NodeID\030\002 \001(\004\022\r\n\005Value\030\003 \001(\014"
-      "\":\n\014SuccessReply\022\032\n\022FirstUnchosenIndex\030\001"
-      " \001(\004\022\016\n\006NodeID\030\002 \001(\0042\213\001\n\005Paxos\022+\n\tOnPrep"
-      "are\022\017.PrepareRequest\032\r.PrepareReply\022(\n\010O"
-      "nAccept\022\016.AcceptRequest\032\014.AcceptReply\022+\n"
-      "\tOnSuccess\022\017.SuccessRequest\032\r.SuccessRep"
-      "lyb\006proto3"
+      "Index\030\005 \001(\004\"K\n\016SuccessRequest\022\032\n\022FirstUn"
+      "chosenIndex\030\001 \001(\004\022\016\n\006NodeID\030\002 \001(\004\022\r\n\005Val"
+      "ue\030\003 \001(\014\":\n\014SuccessReply\022\032\n\022FirstUnchose"
+      "nIndex\030\001 \001(\004\022\016\n\006NodeID\030\002 \001(\0042\213\001\n\005Paxos\022+"
+      "\n\tOnPrepare\022\017.PrepareRequest\032\r.PrepareRe"
+      "ply\022(\n\010OnAccept\022\016.AcceptRequest\032\014.Accept"
+      "Reply\022+\n\tOnSuccess\022\017.SuccessRequest\032\r.Su"
+      "ccessReplyb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 690);
+      descriptor, 698);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "rpc.proto", &protobuf_RegisterTypes);
 }
@@ -1774,7 +1774,7 @@ void AcceptReply::InternalSwap(AcceptReply* other) {
 void SuccessRequest::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SuccessRequest::kInstanceIDFieldNumber;
+const int SuccessRequest::kFirstUnchosenIndexFieldNumber;
 const int SuccessRequest::kNodeIDFieldNumber;
 const int SuccessRequest::kValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -1796,17 +1796,17 @@ SuccessRequest::SuccessRequest(const SuccessRequest& from)
   if (from.value().size() > 0) {
     value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
-  ::memcpy(&instanceid_, &from.instanceid_,
+  ::memcpy(&firstunchosenindex_, &from.firstunchosenindex_,
     static_cast<size_t>(reinterpret_cast<char*>(&nodeid_) -
-    reinterpret_cast<char*>(&instanceid_)) + sizeof(nodeid_));
+    reinterpret_cast<char*>(&firstunchosenindex_)) + sizeof(nodeid_));
   // @@protoc_insertion_point(copy_constructor:SuccessRequest)
 }
 
 void SuccessRequest::SharedCtor() {
   value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&instanceid_, 0, static_cast<size_t>(
+  ::memset(&firstunchosenindex_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&nodeid_) -
-      reinterpret_cast<char*>(&instanceid_)) + sizeof(nodeid_));
+      reinterpret_cast<char*>(&firstunchosenindex_)) + sizeof(nodeid_));
   _cached_size_ = 0;
 }
 
@@ -1849,9 +1849,9 @@ void SuccessRequest::Clear() {
   (void) cached_has_bits;
 
   value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&instanceid_, 0, static_cast<size_t>(
+  ::memset(&firstunchosenindex_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&nodeid_) -
-      reinterpret_cast<char*>(&instanceid_)) + sizeof(nodeid_));
+      reinterpret_cast<char*>(&firstunchosenindex_)) + sizeof(nodeid_));
   _internal_metadata_.Clear();
 }
 
@@ -1865,14 +1865,14 @@ bool SuccessRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint64 InstanceID = 1;
+      // uint64 FirstUnchosenIndex = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
-                 input, &instanceid_)));
+                 input, &firstunchosenindex_)));
         } else {
           goto handle_unusual;
         }
@@ -1931,9 +1931,9 @@ void SuccessRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 InstanceID = 1;
-  if (this->instanceid() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->instanceid(), output);
+  // uint64 FirstUnchosenIndex = 1;
+  if (this->firstunchosenindex() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->firstunchosenindex(), output);
   }
 
   // uint64 NodeID = 2;
@@ -1961,9 +1961,9 @@ void SuccessRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 InstanceID = 1;
-  if (this->instanceid() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->instanceid(), target);
+  // uint64 FirstUnchosenIndex = 1;
+  if (this->firstunchosenindex() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->firstunchosenindex(), target);
   }
 
   // uint64 NodeID = 2;
@@ -2002,11 +2002,11 @@ size_t SuccessRequest::ByteSizeLong() const {
         this->value());
   }
 
-  // uint64 InstanceID = 1;
-  if (this->instanceid() != 0) {
+  // uint64 FirstUnchosenIndex = 1;
+  if (this->firstunchosenindex() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::UInt64Size(
-        this->instanceid());
+        this->firstunchosenindex());
   }
 
   // uint64 NodeID = 2;
@@ -2049,8 +2049,8 @@ void SuccessRequest::MergeFrom(const SuccessRequest& from) {
 
     value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
-  if (from.instanceid() != 0) {
-    set_instanceid(from.instanceid());
+  if (from.firstunchosenindex() != 0) {
+    set_firstunchosenindex(from.firstunchosenindex());
   }
   if (from.nodeid() != 0) {
     set_nodeid(from.nodeid());
@@ -2082,7 +2082,7 @@ void SuccessRequest::Swap(SuccessRequest* other) {
 void SuccessRequest::InternalSwap(SuccessRequest* other) {
   using std::swap;
   value_.Swap(&other->value_);
-  swap(instanceid_, other->instanceid_);
+  swap(firstunchosenindex_, other->firstunchosenindex_);
   swap(nodeid_, other->nodeid_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);

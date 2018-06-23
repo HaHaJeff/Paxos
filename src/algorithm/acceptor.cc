@@ -1,7 +1,7 @@
 #include "acceptor.h"
 #include <iterator>
 
-AcceptState::AcceptState(std::shared_ptr<StateMachine> pState) : lastLogIndex_(0), firstUnchosenIndex_(0), pState_(pState) {
+AcceptState::AcceptState(std::shared_ptr<StateMachine> pState) : lastLogIndex_(0), pState_(pState) {
 }
 AcceptState::~AcceptState() {  }
 
@@ -61,16 +61,14 @@ void AcceptState::SetLogProposal(uint32_t index, const ProposalEntry &proposal) 
 
 void AcceptState::UpdateChosenProposal(uint32_t proposal, uint32_t peerFirstUnchosenIndex) {
   std::lock_guard<std::mutex> lock(mutex_);
-  for (int i = firstUnchosenIndex_; i < peerFirstUnchosenIndex; i++) {
+  int firstUnchosenIndex = GetFirstUnchosenIndex();
+  for (int i = firstUnchosenIndex; i < peerFirstUnchosenIndex; i++) {
     ProposalEntry entry;
     if (GetLogProposal(i, entry) && entry.first == proposal) {
       minProposal_[i] = PROPOSAL_MAX;
       AddToStateMachine(i, entry);
     }
   }
-
-  //FIXME: update firstUnchosenIndex_
-  firstUnchosenIndex_ = GetFirstUnchosenIndex();
 }
 
 void AcceptState::UpdateEntry(uint32_t index, const ProposalEntry &proposal) {
@@ -174,7 +172,16 @@ void Acceptor::RecvAccept(const AcceptRequest &request, AcceptReply &reply) {
 }
 
 void Acceptor::RecvSuccess(const SuccessRequest &request, SuccessReply &reply) {
+  uint32_t peerFirstUnchosenIndex = request.firstunchosenindex();
+  uint32_t firstUnchosenIndex = state_.GetFirstUnchosenIndex();
 
+  std::string value = request.value();
+
+  if (firstUnchosenIndex < peerFirstUnchosenIndex) {
+    ProposalEntry entry(firstUnchosenIndex, value);
+    state_.AddToStateMachine(firstUnchosenIndex, entry);
+  }
+  reply.set_firstunchosenindex(state_.GetFirstUnchosenIndex());
 }
 
 void Acceptor::Print() {

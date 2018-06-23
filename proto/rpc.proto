@@ -39,7 +39,7 @@ message AcceptReply {
 }
 
 message SuccessRequest {
-  uint64 InstanceID = 1;
+  uint64 FirstUnchosenIndex = 1;
   uint64 NodeID = 2;
   bytes Value = 3;
 }

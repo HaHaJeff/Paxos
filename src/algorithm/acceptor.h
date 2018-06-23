@@ -40,7 +40,6 @@ class AcceptState {
 
   private:
     uint32_t lastLogIndex_;
-    uint32_t firstUnchosenIndex_;
     std::map<uint32_t, uint32_t> minProposal_;
     std::map<uint32_t, ProposalEntry> acceptedProposal_;
     std::shared_ptr<StateMachine> pState_;
